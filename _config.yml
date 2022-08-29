@@ -1,0 +1,7 @@
+github-org-name: nyu-agile-development
+baseurl: /course-materials
+title: Agile Development & DevOps
+description: >
+  A fantastic voyage through agile development principles and devops practices
+copyright: GNU General Public License, Version 3
+layouts_dir: assets/jekyll/_layouts/

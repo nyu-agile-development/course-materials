@@ -1,0 +1,601 @@
+---
+layout: presentation
+title: Scrum
+permalink: /slides/scrum/
+---
+
+class: center, middle
+
+# Scrum
+
+Software developers role-play rugby
+
+---
+
+# Agenda
+
+1. [Agile manifesto](#manifesto)
+2. [Scrum framework](#scrum)
+3. [Roles](#roles)
+4. [Events](#events)
+5. [Communications](#communications)
+6. [Team harmony](#harmony)
+7. [Conclusions](#conclusions)
+
+---
+
+name: manifesto
+
+# Agile manifesto
+
+--
+
+## Concept
+In 2001, at The Lodge at the Snowbird Ski Resort in Utah, 17 prestigious developers got together to talk shop.
+
+--
+
+- They emerged shortly thereafter with the **Agile Manifesto**, a very short document.
+
+---
+
+template: manifesto
+
+## The text
+> We are uncovering better ways of developing software by doing it and helping others do it.
+>
+> Through this work we have come to value:
+>
+> - _Individuals and interactions_ over processes and tools
+> - _Working software_ over comprehensive documentation
+> - _Customer collaboration_ over contract negotiation
+> - _Responding to change_ over following a plan
+>
+> That is, while there is value in the items on the right, we value the items on the left more.
+>
+> -[Agile Manifesto](http://agilemanifesto.org)
+
+---
+
+template: manifesto
+
+## Implementation
+The Agile manifesto inspired a world of developers, but there were no details on how to implement it.
+
+--
+
+- Various practical implementation frameworks quickly emerged.
+
+--
+
+- [Scrum](https://www.scrum.org/resources/what-is-scrum/) is one of these.
+
+---
+
+name: scrum
+
+# Scrum framework
+
+--
+
+template: scrum
+
+## Concept
+The Scrum framework is a recipe for achieving agile development by prescribing a strict set of...
+
+--
+
+- Roles
+
+--
+
+- Events
+
+--
+
+- Artifacts
+
+---
+
+name: roles
+
+# Roles
+
+---
+
+template: roles
+
+## Concept
+Scrum defines four distinct roles:
+
+--
+
+- Product owner
+
+--
+
+- Scrum master
+
+--
+
+- Developer
+
+--
+
+- Stakeholder
+
+--
+
+It is possible, although not adviseable, for one person to perform more than one of these roles.
+
+---
+
+template: roles
+
+## Product owner
+
+The Product Owner represents the business interests within the team.
+
+--
+
+- The Product Owner is the team member who communicates directly with the client.
+
+--
+
+- The Product Owner is the team member who maintains and prioritizes the list of features to be implemented.
+
+---
+
+template: roles
+
+## Scrum master
+
+The Scrum Master represents the Scrum framework within the team.
+
+--
+
+- The Scrum Master is a "[servant leader](https://www.benning.army.mil/infantry/199th/OCS/content/pdf/The%20Servant%20as%20Leader.pdf)", not a manager.
+
+--
+
+- The Scrum Master ensures the team is following the Scrum framework.
+
+---
+
+template: roles
+
+## Developer
+
+Developers implement the work laid out by the Product Owner.
+
+--
+
+- Developers collaborate with the Product Owner to properly define and scope the work.
+
+--
+
+- Developers are autonomous and decide in what manner to do the work.
+
+---
+
+template: roles
+
+## Stakeholder
+
+Stakeholders are people external to the team who have an important voice.
+
+--
+
+- Stakeholders could be the client, or executives in the development company.
+
+--
+
+- Stakeholders can cause problems if not kept in close communication with the team.
+
+---
+
+name: events
+
+# Events
+
+--
+
+## Concept
+Scrum defines seven ritual events for different purposes:
+
+--
+
+- Backlog creation
+
+--
+
+- Sprint planning
+
+--
+
+- Daily scrum
+
+--
+
+- Backlog grooming
+
+--
+
+- Sprint review
+
+--
+
+- Stakeholder demo
+
+--
+
+- Team retrospective
+
+---
+
+template: events
+
+## Sprint timeline
+
+![Scrum events timeline](../images/scrum_events.png)
+
+---
+
+template: events
+
+## Backlog creation
+
+The Product Backlog is a list of features that the project is intended to implement. These featuress are written in a specific style and called "**User Stories**".
+
+--
+
+- The Product Owner, by speaking with Stakeholders, drafts and maintains the Product Backlog at the start of a project.
+
+--
+
+- The features in the Product Backlog are ordered, with the most important User Stories on top of the list.
+
+---
+
+template: events
+
+## Backlog creation
+
+### User stories
+
+User Stories are written in the following form:
+
+> As a **\_\_\_**, I want to **\_\_\_**, so that **\_\_\_**
+
+--
+
+- the first blank is filled in with a user role or type of user
+
+--
+
+- the second blank is filled in with a goal
+
+--
+
+- the third blank is filled in with a reason
+
+--
+
+These are written in non-technical language by the Product Owner.
+
+---
+
+template: events
+
+## Backlog creation
+
+### User stories
+
+User Stories should follow the _INVEST_ acronym:
+
+- **I**ndependent - user stories do not depend on one-another
+
+--
+
+- **N**egotiable - can be canceled or changed at any time
+
+--
+
+- **V**aluable - meaningful stories
+
+--
+
+- **E**stimable - must be descriptive and small enough to be able to easily estimate work for it.
+
+--
+
+- **S**mall - story is small enough to be completed in one sprint
+
+--
+
+- **T**estable - story contains enough clarity to be able to easily design a test for it
+
+---
+
+template: events
+
+## Backlog creation
+
+### User stories
+
+User Stories each have a set of **Acceptance Criteria**.
+
+--
+
+- This represents the minimum requirements for the User Story to be considered done.
+
+--
+
+- The Product Owner and Developers collaborativeley come up with this list of requirements.
+
+---
+
+template: events
+
+## Backlog creation
+
+### User stories
+
+User Stories each have an **Estimation of Effort**
+
+--
+
+- The Developers determine how much work is involved in the user story.
+
+--
+
+- **Planning Poker** is a popular technique for determining this.
+
+---
+
+template: events
+
+## Backlog creation
+
+### Spikes
+
+Sometimes work needs to be done that is not end-user-facing, such as setting up a particular development environment.
+
+--
+
+Such a piece of work is called a _Spike_.
+
+---
+
+template: events
+
+## Sprint planning
+
+In Scrum, work is divided into increments called "sprints". Sprints typically last several weeks.
+
+--
+
+- At the start of each Sprint, the entire team (including Product Owner) gets together and decides which features (i.e. User Stories) to work on in this Sprint.
+
+--
+
+- The Product Owner presents the list of User Stories in the Product Backlog, from top to bottom.
+
+--
+
+- The team discusses and collaboratively agrees on which User Stories to do in this Sprint.
+
+--
+
+- The Developers break up each User Story into discrete Tasks - units of work that are doable by one developer in about one day.
+
+---
+
+template: events
+
+## Sprint planning
+
+The team discusses and collaboratively agrees on which User Stories to do in this Sprint. These are added to the Sprint Backlog.
+
+--
+
+- The Developers break up each User Story in the Sprint Backlog into discrete Tasks - units of work that are doable by one developer in about one day.
+
+--
+
+- Each task is assigned to a specific developer.
+
+--
+
+- The Developers get to work.
+
+---
+
+template: events
+
+## Daily Scrum
+
+Every day, the Scrum Master and Developers get together to discuss status.  Each Developer answers three questions:
+
+--
+
+- What have you done since last time?
+
+--
+
+- What are you doing now?
+
+--
+
+- Is there anything blocking your progress?
+
+--
+
+Blocking problems are addressed by the Scrum Master, who must seek help externally.
+
+---
+
+# Events
+
+## Backlog Grooming
+
+Each Sprint, the Product Owner maintains the Product Backlog - adding new User Stories, modifying old ones, etc.
+
+--
+
+- At the mid-point of each Sprint, the entire team (including Product Owner) gets together to discuss these additions.
+
+--
+
+- The team discusses the new User Stories, and the Product Manager orders them appropriately in the Product Backlog.
+
+--
+
+- No User Stories are ever added to the current Sprint, but they can be addressed in subsequent Sprints.
+
+---
+
+# Events
+
+## Sprint review
+
+At the end of each Sprint, the entire team (including Product Owner) meet to discuss the work that has been done.
+
+--
+
+- Unfinished User Stories are returned to the Product Backlog.
+
+--
+
+- The team agrees what is good enough to show to the Stakeholders.
+
+---
+
+# Events
+
+## Stakeholder demo
+
+The entire team demonstrates the work to the Stakeholders.
+
+--
+
+- The Product Owner often leads the demo, althogh may do so, if helpful.
+
+--
+
+- Stakeholders give feedback, suggest additions, changes, etc.
+
+--
+
+- The Product Owner adds any new User Stories requested by the Stakeholders to the Product Backlog.
+
+---
+
+# Events
+
+## Team retrospective
+
+The team discusses what happened in this sprint.
+
+--
+
+- How did the demo go?
+
+--
+
+- What worked well?
+
+--
+
+- What went poorly?
+
+--
+
+- How can we improve next time?
+
+---
+
+name: communications
+
+# Communications
+
+---
+
+# Communications
+
+--
+
+## Concept
+It is expected in Scrum that team members and Stakeholders always know the status of work currently being done.
+
+--
+
+- The primary document outlining the status of thee project is the Task Board.
+
+---
+
+# Communications
+
+## Task Board
+
+The Task board divides the activities in the current Sprint into the simple categories, such as:
+
+--
+
+- **Sprint Backlog** - list of all the User Stories that are being worked on this Sprint.
+
+--
+
+- **To Do** - a list of all the Tasks that have not yet been started,
+
+--
+
+- **In Process** - a list of the Tasks that are currently in-progress.
+
+--
+
+- **Awaiting Review** - a list of the Tasks that are Awaiting review by another team member.
+
+--
+
+- **Done** - a list of the Tasks that have been reviewed and are considered complete.
+
+--
+
+The Task Board must be kept up-to-date at all times by the Product Owner and Developers.
+
+---
+
+name: harmony
+
+# Team harmony
+
+--
+
+## Concept
+
+It is critical that all team members be able to see the accurate status of all Tasks by all Developers.
+
+--
+
+- It is a good idea to draft a set of **Team Norms** that govern team member behavior.
+
+--
+
+- The entire team will notice when a member is not performing their duties, since it will obviously come up in the Dialy Scrum meetings and reviews of the Task Board.
+
+--
+
+- It is understood that the entire team will inform the boss early if any team member is not performing their duties, since it is a blocking problem.
+
+---
+
+name: conclusions
+
+# Conclusions
+
+---
+
+# Conclusions
+
+Thank you. Bye.

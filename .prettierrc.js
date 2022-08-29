@@ -2,6 +2,7 @@ module.exports = {
   overrides: [
     {
       files: "docs/**/*.html",
+      files: "slides/**/*.html",
       options: { parser: "markdown" },
     },
   ],

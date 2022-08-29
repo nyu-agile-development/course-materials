@@ -1,0 +1,630 @@
+---
+layout: presentation
+title: What is Software Engineeering
+permalink: /slides/what-is-software-engineering/
+---
+
+class: center, middle
+
+# Software Engineering
+
+What is it?
+Why is it useful?
+
+---
+
+# Agenda
+
+1. [Attempts at a definition](#definition)
+1. [Challenges](#challenges)
+1. [The Software Crisis](#software-crisis)
+1. [Intrusion of DevOps](#devops)
+1. [Development lifecycle](#lifecycle)
+1. [Process models](#models)
+1. [Conclusions](#conclusions)
+
+---
+
+name: definition
+
+# Attempts at a definition
+
+---
+
+template: definition
+
+## Wikipedia
+
+> Software engineering is the application of engineering to the development of software in a systematic method.
+>
+> --- [Wikipedia](https://en.wikipedia.org/wiki/Software_engineering)
+
+---
+
+template: definition
+
+## IEEE
+
+> The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.
+>
+> --- IEEE Standard 610.12
+
+---
+
+template: definition
+
+## ACM
+
+> Software engineering is concerned with developing and maintaining software systems that behave reliably and efficiently, are affordable to develop and maintain, and satisfy all the requirements that customers have defined for them.
+>
+> --- ACM
+
+---
+
+template: definition
+
+## Merriam-Webster
+
+> A branch of computer science that deals with the design, implementation, and maintenance of complex computer programs.
+>
+> --- Merriam-Webster
+
+---
+
+template: definition
+
+## Foo Barstein
+
+> Software engineerings is the systematic approach to creating software that uses empirical, evidence-based social and practical knowledge to invent, innovate, design, build, maintain, research, and improve software.
+>
+> --- Foo Barstein
+
+---
+
+template: definition
+
+## Confusion by job title
+
+Job titles vary wildly in industry. For example, each of these titles may or may not be for the role and responsibilities of a software engineeer - there is no way to know.
+
+- Software engineer
+- Software developer
+- Software architect
+- IT consultant
+- IT specialist
+- Systems analyst
+- Developer
+- Coder
+- Programmer
+- Ninja
+- Requirements engineer
+- Testing engineer
+- Q/A engineer
+  ... and many more
+
+---
+
+template: definition
+
+## Definition by antithesis: bespoke development
+
+Today, the antagonist to our protagonist is the **bespoke** developer - an individual or team who work take a unique custom-tailored approach to every project.
+
+--
+
+- Bespoke development can produce beautiful works of art perectly fitted to the customer's needs.
+
+--
+
+- Software engineers, in contrast, streamline development such that the work references genericized norms, best-practices, standards, and patterns known to many developers and shared by many projects in the field.
+
+--
+
+- In other words, software engineers are the fry cooks of the industrial software development assembly line.
+
+---
+
+template: definition
+
+## Definition by antithesis: bespoke development
+
+The ideal of artisanal work is much pined for for its uniqueness and attention to detail.
+
+--
+
+But artisanal approaches do not scale well because...
+
+--
+
+- Software is increasingly complex.
+
+--
+
+- Demand for software is everywhere and increasing.
+
+--
+
+- Artisanal approaches are, by nature, time consuming and expensive.
+
+---
+
+name: challenges
+
+# Challenges
+
+---
+
+template: challenges
+name: abstract-challenge-1
+
+## Software is abstract
+
+Linus Torvalds (creator of Git and the Linux kernel), [CNN interview from 2000](https://www.youtube.com/watch?v=NKkvPxYNh9A&list=PLWJSC31EgeIwOCrFySTNyBDKUUGV2W5lr):
+
+> You have much more freedom than you have when you're building a bridge or a building. You can pretty much make up your own rules. [...] It is artistry... at least for good programmers.
+
+---
+
+template: abstract-challenge-1
+name: abstract-challenge-2
+
+The bits and bytes on the machine are not constrained by physical limitations, limits in manufacturing, or transportation logistics. This allows for the development of a wild variety of systems - virtually any idea can be turned into software with little overhead.
+
+---
+
+template: abstract-challenge-2
+name: abstract-challenge-3
+
+This same lack of constraints allows for glutonous programmers to write code that can become increasingly complicated, deep, and difficult to maintain.
+
+---
+
+template: challenges
+name: complex-challenge-1
+
+## Software is increasingly complex
+
+[Fred Brooks](https://en.wikipedia.org/wiki/Brooks%27s_law), from "The Mythical Man-Month":
+
+> Adding manpower to a late software project makes it later.
+
+---
+
+template: complex-challenge-1
+name: complex-challenge-2
+
+Creating quality software is hard, especially on a large scale.
+
+---
+
+template: complex-challenge-2
+name: complex-challenge-3
+
+- Developer onboarding
+
+---
+
+template: complex-challenge-3
+name: complex-challenge-4
+
+- System complexity
+
+---
+
+template: complex-challenge-4
+name: complex-challenge-5
+
+- Client expectations
+
+---
+
+template: challenges
+name: more-challenge-1
+
+## Software is not just a program
+
+Well-designed, functional, maintainable software usually includes many artifacts besides a program:
+
+---
+
+template: more-challenge-1
+name: more-challenge-2
+
+- documentation
+
+---
+
+template: more-challenge-2
+name: more-challenge-3
+
+- configuration data
+
+---
+
+template: more-challenge-3
+name: more-challenge-4
+
+- libraries
+
+---
+
+template: more-challenge-4
+name: more-challenge-5
+
+- data storage resources
+
+---
+
+template: more-challenge-5
+name: more-challenge-6
+
+- supportive web sites
+
+---
+
+template: challenges
+name: demand-challenge-1
+
+## Demand for software is increasing
+
+From the [Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm):
+
+- **Number of Jobs, 2018:** 1,365,500
+
+---
+
+template: demand-challenge-1
+name: demand-challenge-2
+
+- **Job Outlook, 2018-28:** 21% (Much faster than average)
+
+---
+
+template: demand-challenge-2
+name: demand-challenge-3
+
+- **Employment Change, 2018-28:** 284,100
+
+---
+
+template: demand-challenge-3
+name: demand-challenge-4
+
+- **2018 Median Pay:** $105,590 per year / $50.77 per hour
+
+---
+
+template: demand-challenge-4
+name: demand-challenge-5
+
+- **Typical Entry-Level Education:** Bachelor's degree
+
+---
+
+template: demand-challenge-5
+name: demand-challenge-6
+
+- **Work Experience in a Related Occupation:** None
+
+---
+
+template: demand-challenge-6
+name: demand-challenge-7
+
+- **Work Experience in a Related Occupation:** None
+
+---
+
+template: demand-challenge-7
+name: demand-challenge-8
+
+- **On-the-job Training:** None
+
+---
+
+template: challenges
+name: time-challenge-1
+
+## Software must ideally be delivered on-time on-budget
+
+Engineering is the application of science and knowledge to practical applications.
+
+Software engineering aims to produce real-world software that can be used by its customers to solve their problems.
+
+---
+
+template: time-challenge-1
+name: time-challenge-2
+
+There is almost universally a budget and a deadline. Engineers must figure out how to solve the problem with those constraints.
+
+---
+
+name: software-crisis
+
+# Crises in software development
+
+--
+
+## Alan Turing
+In 1947, in [a lecture to the London Mathematical Society](http://www.vordenker.de/downloads/turing-vorlesung.pdf), computing pioneer, [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing), said,
+
+--
+
+> One of our difficulties will be the maintenance of an appropriate discipline, so that we do not lose track of what we are doing.  We shall need a number of efficient librarian types to keep us in order...
+> 
+> -Alan Turing
+
+--
+
+Alan Turing is considered [the inventor of the computer program](https://www.primermagazine.com/2010/learn/great-men-youve-never-heard-of-alan-turing-inventor-of-the-computer-program) as we know it today.  In 1947, he could have been considered the only computer programmer in the world.
+
+--
+
+- Yet here he is, already sensing the need for discipline and oversight.
+
+---
+
+template: software-crisis
+
+## Alan Turing
+
+Another prescient quote from Turing's lecture:
+
+--
+
+> The masters [programmers] are liable to get replaced because as soon as any technique becomes at all stereotyped it becomes possible to devise a [program] which will enable the electronic computer to do it for itself. It may happen however that the masters will refuse to do this. They may be unwilling to let their jobs be stolen from them in this way. In that case they would surround the whole of their work with mystery and make excuses, couched in well chosen gibberish, whenever any dangerous suggestions were made.
+> 
+> -Alan Turing
+
+---
+
+template: software-crisis
+
+## The Software Crisis
+Turing's premonition of software engineering as a discipline came of age during the turbulent times of the 1960's, as more and more people began to recognize it was a rare project which resulted in efficient and well-functioning software in a reasonable amount of time at a reasonable cost.
+
+--
+
+- This became known as the great Software Crisis!
+
+---
+
+template: software-crisis
+
+## The Software Crisis
+
+"[Software’s Chronic Crisis](https://knowledge.kitchen/mediawiki/images/e/e5/Software%27s_Chronic_Crisis.pdf)", Scientific American, Sept. 1994:
+
+> By the time [the art of programming] reached 25, the difficulties of building big software loomed so large that in the autumn of 1968 the NATO Science Committee convened some 50 top programmers, computer scientists and captains of industry to plot a course out of what had come to be known as the software crisis. Although the experts could not contrive a road map to guide the industry toward firmer ground, they did coin a name for that distant goal: software engineering, now defined formally as “the application of a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software.”
+>
+> A quarter of a century later software engineering remains a term of aspiration.
+
+---
+
+template: software-crisis
+
+## C.A.R. Hoare
+In 1980, on [his acceptance of the Turing Award](https://www.cs.fsu.edu/~engelen/courses/COP4610/hoare.pdf) for "fundamental contributions to the definition and design of programming languages", [C.A.R. Hoare](https://en.wikipedia.org/wiki/Tony_Hoare) said,
+
+--
+
+> There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies."
+> 
+> -C.A.R. Hoare
+
+---
+
+name: devops
+
+# Intrusion of DevOps
+
+---
+
+template: devops
+name: devops-merger-1
+
+## Merging Development with Operations
+
+DevOps is the amalgamation of...
+
+- Development (writing code)
+- Operations (IT tools, infrastructure, and practices)
+
+--
+
+Formerly considered disparate disciplines, in contemporary thought, operations functions are either incorporated into the workload of developers, or managed by IT specialists working in close communication with developers.
+
+---
+
+template: devops
+name: devops-automation-1
+
+## Relying on automation
+
+How Operations can be merged with Development is largely explained by the rise of automation.
+
+---
+
+template: devops-automation-1
+name: devops-automation-2
+
+Automated tools and virtualization now allow developers to trigger formerly time- and resource-consuming IT operations with minimal setup and wait time and minimal reliance on humans.
+
+---
+
+template: devops
+name: devops-automation-3
+
+## Relying on automation
+
+Operations such as the following are now often done with the assistance of automated tools:
+
+- setting development and production environments
+- monitoring progress
+- testing
+- deploying
+- securing applications
+
+---
+
+name: lifecycle
+
+# Development lifecycle
+
+---
+
+name: dev-lifecycle-1
+
+# Development lifecycle
+
+## Phases of development
+
+Regardless of process model, the phases of development are familiar to all:
+
+1. Specification
+2. Implementation
+3. Validation
+4. Evolution
+
+---
+
+template: dev-lifecycle-1
+name: dev-lifecycle-2
+
+- Rinse and repeat -
+
+---
+
+# Development lifecycle
+
+## Specification
+
+Figuring out as much as you can about what the system will do and how it will do it.
+
+---
+
+# Development lifecycle
+
+## Implementation
+
+Writing the code, designing the interface, writing the text, building the systems, making it work according to plan, etc.
+
+---
+
+# Development lifecycle
+
+## Validation
+
+Does it work? Is it what you planned?
+
+---
+
+# Development lifecycle
+
+## Evolution
+
+- Bug fixes
+- Maintenance
+- New features
+
+---
+
+name: models
+
+# Process models
+
+---
+
+template: models
+
+## Overview
+
+- In **Big Design Up-Front** methodologies, we perform these phases once for the entire project at inception.
+- In **Incremental** development methodologies, we repeat these phases many times for pieces of the project at discrete intervals.
+
+---
+
+template: models
+
+## Big Design Up-Front
+
+In Big Design Up-Front methodologies, such as "Waterfall", we perform each of the lifecycle phases once for the entire project at inception.
+
+![Waterfall process lifecycles](../images/software_lifecycles_waterfall.png)
+
+---
+
+template: models
+
+## Big Design Up-Front
+
+With Big Design Up-Front/Waterfall, once a specification has been drafted and agreed upon ('signed-off on'), estimating project cost and completion date is, in theory, straightfoward, since everyone has agreed exactly what is to be done and how it will be done.
+
+---
+
+template: models
+
+## Big Design Up-Front
+
+In Big Design Up-Front/Waterfall methodologies, each phase must be completed and 'signed off' before the next phase can begin.
+
+Since there is only one iteration of each phases, these phases typically take a long time. The project needs might change during that time.
+
+Any change requires a rewriting of the entire specification and another 'sign-off' from the client and re-doing of any work already done in subsequent phases.
+
+---
+
+template: models
+
+## Incremental methodologies
+
+In Incremental development methodologies, such as the so-called "Agile" methodologies, the work to be done is broken up into increments, and developers repeat these phases many times for each piece/increment of the project at discrete intervals.
+
+![Iterative process lifecycles](../images/software_lifecycles_iterative.png)
+
+---
+
+template: models
+
+## Incremental methodologies
+
+In Incremental/Agile methodologies, since work is broken up into discrete increments with their own lifecycle phases, any changes to the project only affect the current iteration, not the project as a whole.
+
+---
+
+template: models
+
+## Incremental methodologies
+
+In Incremental/Agile methodologies, since specification and the other phases only happen in increments, there is no holistic view of how long the project will take nor how much it will cost.
+
+Incremental/Agile development, in a purist sense, therefore is only feasible when unlimited money and unlimited time are available.
+
+---
+
+template: models
+
+## Incremental methodologies
+
+Since unlimited funds and time are usually not available, many Incremental/Agile development practitioners put fixed time limits and money limits on the project, and try to complete as much as possible in that time for that money.
+
+---
+
+template: models
+
+## Incremental methodologies
+
+Since the project may not be fully completed before time and money run out, Incremental/Agile developers _try_ to have each increment be a runnable product that may not be feature-complete, but will be functional as-is, even if no more work is to be done on the project.
+
+---
+
+name: conclusions
+
+# Conclusions
+
+---
+
+# Conclusions
+
+Thank you. Bye.

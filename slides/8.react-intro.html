@@ -1,0 +1,1283 @@
+---
+layout: presentation
+title: Introduction to React.js
+permalink: /slides/react-intro/
+---
+
+class: center, middle
+
+# React.js Crash Course
+
+for people who want to make something appear in a browser, but don't want to write HTML & CSS code
+
+---
+
+# Agenda
+
+1. [Overview](#overview)
+1. [A Word About HTML & CSS](#html-css)
+1. [React Setup From Scratch](#setup)
+1. [React Setup From Git](#setup-git)
+1. [Components](#components)
+1. [Props](#props)
+1. [State](#state)
+1. [Side-Effects](#side-effects)
+1. [Fetching Data From Servers and APIs](#fetch)
+1. [Linking From One Screen To Another](#links)
+1. [Conclusions](#conclusions)
+
+---
+
+name: overview
+
+# Overview
+
+---
+
+template: overview
+name: overview-1
+
+## Concept
+
+React.js is a tool for auto-generating HTML, CSS, and browser-based Javascript for web app client interfaces.
+
+- created and maintained by Facebook
+- built with [Node.js](https://nodejs.org) - a popular Javascript runtime environment most often used for back-end app development.
+- React.js scripts are written in Javascript with the addition of [React's unique JSX syntax](https://reactjs.org/docs/introducing-jsx.html)
+
+---
+
+template: overview
+name: overview-2
+
+## Choice of approach
+
+- HTML & CSS are _quite simple_ languages for indicating the content and style of web pages, respectively.
+- Javascript is a _quite complex_ language with many unusual but interesting features.
+- You may wonder why anyone would desire to exhange code written in such simple languages with code written in a highly complex language.
+
+---
+
+template: overview
+name: overview-3
+
+## A front-end generator
+
+React.js programs themselves are not web apps - they comprise neither the front nor the back end.
+
+- React.js programs are run in order to generate client-side (i.e. front-end) HTML, CSS, and browser-based Javascript code.
+- These generated codes together comprise the front-end of an application.
+
+---
+
+template: overview
+name: overview-4
+
+## Components are standardized, reusable, and shareable
+
+The key value proposition of React.js is that it produces standardized reusable code.
+
+- comes with basic components corresponding to HTML elements.
+- allows for simple creation of reusable custom components
+- leverages the Node.js Package Manager (NPM) to remove any difficulty from downloading, installing, and configuring additional 3rd-party components.
+
+---
+
+name: html-css
+
+# A Word About HTML & CSS
+
+---
+
+template: html-css
+name: html-css-1
+
+## Concept
+
+Any **web browser** understands the three core front-end web technologies:
+
+- **Hypertext Markup Language** (HTML) - controls the content present on the web page
+- **Cascading Style Sheets** (CSS) - controls the visual style of the content on the web page
+- **Javascript** (JS) - controls the iteractive behavior of the web page (how does the page change when a user clicks, types, moves them mouse, etc)
+
+---
+
+template: html-css
+name: html-css-2
+
+## Javascript
+
+In addition to controlling the interactive behaviors of web pages running in web browsers, Javascript has found new life in other environments:
+
+- writing Javascript to autogenerate HTML and CSS for the front-end of a web app by using [React.js](https://reactjs.org/), of course.
+- web [browser extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension) written in Javascript.
+- server-side programming with [Node.js](https://nodejs.org).
+- scripts to automate image editing processes in [Adobe Creative Suite](https://www.adobe.com/devnet/scripting.html).
+- interactive music and video composition with Cycling 74's [Max/MSP](https://cycling74.com/products/max/).
+- database queries in [MongoDB](https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo), [Firebase](https://firebase.google.com/docs/reference/js/), and others.
+- [Solidity](https://github.com/ethereum/solidity) is designed to be a Javascript-like language that runs on the Ethereum blockchain.
+
+---
+
+template: html-css
+name: html-1
+
+## HTML in three slides (slide 1)
+
+For any given web page, HTML code indicates the type of content to show as well as each piece of content's purpose, or semantic meaning.
+
+- A level 1 heading: `<h1>Puppies For Sale</h1>`
+- A paragraph: `<p>Buy now while supplies last!</p>`
+- An image of a lonely puppy: `<img src="images/lonely_puppy.jpg" />`
+- An article with a level 1 heading, an image of a sad puppy, and a paragraph with a link to another web page:
+
+```html
+<article>
+  <h1>Puppies For Sale</h1>
+  <img src="images/lonely_puppy.jpg" />
+  <p>
+    Buy now while supplies last!
+    <a href="puppies.html">Learn more</a>
+  </p>
+</article>
+```
+
+[Try it](https://jsfiddle.net/barsteinfoo/erq4hzya/2/)
+
+---
+
+template: html-css
+name: html-2
+
+## HTML in three slides (slide 2)
+
+Many web sites see the same basic content structures repeated across multiple pages, or repeated within a single page. [Try it!](https://jsfiddle.net/barsteinfoo/adgrp9zb/5/)
+
+```html
+<section>
+  <!-- the first article -->
+  <article>
+    <h1>Puppies For Sale</h1>
+    <img src="images/lonely_puppy.jpg" />
+    <p>
+      Buy now while supplies last!
+      <a href="puppies.html">Learn more</a>
+    </p>
+  </article>
+  <!-- the second article... notice its structural similarity to the first -->
+  <article>
+    <h1>Kittens For Sale</h1>
+    <img src="images/sad_kitten.jpg" />
+    <p>
+      Get 'em while they're hot!
+      <a href="kittens.html">Learn more</a>
+    </p>
+  </article>
+</section>
+```
+
+---
+
+template: html-css
+name: html-3
+
+## HTML in three slides (slide 3)
+
+Actually, we're more-or-less finished explaining HTML in 2 slides.
+
+What you just learned is how to code for content that will be displayed in the `body` of a web page - the part of an HTML document that represents the visible content.
+
+- Learn [a bit more about HTML documents](https://nyu-web-design.github.io/course-materials/html/).
+
+---
+
+template: html-css
+name: css-1
+
+## CSS in three slides (slide 1)
+
+For any given web page, CSS code indicates the style to use for the content indicated by the HTML.
+
+- Give _all_ level 2 headings green text: `h2 { color: green; }`
+- Give _all_ paragraphs a pink background: `p { background-color: pink; }`
+- Set the dimensions of _all_ images: `img { width: 200px; height: 300px; }`
+- Give _all_ articles a thick pink dotted border, a bold `serif` font, and lots of space around the contents inside them:
+
+```css
+article {
+  border: 10px dotted pink;
+  font-family: georgia;
+  font-weight: bold;
+  padding: 20px;
+}
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/adgrp9zb/6/)
+
+---
+
+template: html-css
+name: css-2
+
+## CSS in three slides (slide 2)
+
+Let's say you had four paragraphs, and wanted to style only two of them the same. Mark them with a `class` attribute in the HTML. If you want to uniquely style only one, mark it with an `id` attribute:
+
+```html
+<p>Lorem ipsum dolor sit amet.</p>
+<p class="my_favorite_paragraphs">Ipsum dolor sit amet lorem.</p>
+<p id="a_really_special_paragraph">Dolor sit amet lorem ipsum.</p>
+<p class="my_favorite_paragraphs">Ipsum dolor sit amet lorem.</p>
+```
+
+And select only the paragraphs that match these attributes in the CSS:
+
+```css
+p.my_favorite_paragraphs {
+  box-shadow: 5px 5px 10px; /* a drop shadow */
+}
+p#a_really_special_paragraph {
+  font-size: 24px; /* relatively big */
+}
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/adgrp9zb/8/)
+
+---
+
+template: html-css
+name: css-3
+
+## CSS in three slides (slide 3)
+
+That's almost it. But there is one very important part of CSS code that we will not address here is how you place elements onto the web page in the location where you want them to go.
+
+There are a variety of ways... the latest greatest is to **CSS Flexbox** - see [a simple example](https://jsfiddle.net/barsteinfoo/adgrp9zb/13/) - flexbox is how layouts should be done with React.
+
+- First learn [more about basic CSS](https://nyu-web-design.github.io/course-materials/css/).
+- Then learn [more about layouts with CSS flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox).
+
+---
+
+template: html-css
+name: css-4
+
+## Auto-generating HTML & CSS
+
+Now that you have a mastery of HTML & CSS (!), you will use React.js to autogenerate some of it for you.
+
+- React allows you to easily write reusable bits of HTML, CSS, and browser-based Javascript code called **components**.
+- For example, you can define a template for an `Animal` that contains a heading, photo, and paragraph about a particular animal, and then reuse that template across many pages or in many places within one page.
+
+[Try it!](https://jsfiddle.net/barsteinfoo/1j4udLtk/42/)
+
+---
+
+name: setup
+
+# React Setup From Scratch
+
+---
+
+template: setup
+name: setup-1
+
+## Install Node.js
+
+Since React.js is built to run in it, a developer must first [install Node.js](https://nodejs.org)
+
+- pick the latest stable version for your system
+
+---
+
+template: setup
+name: setup-2
+
+## Create project directories
+
+If creating a React app from scratch, first create project directory where everything related to your app - front-end, back-end, and React code - will reside.
+
+```bash
+mkdir my-app
+cd my-app
+```
+
+Since you'll eventually need it, take the opportunity to make a sub-directory for the back-end code.
+
+```bash
+mkdir back-end
+```
+
+---
+
+template: setup
+name: setup-3
+
+## Create a starter React app
+
+In the project directory, create a React starter project - this will create the basic directory structure, install any necessary dependencies, set up configuration files, and include simple React app starter code that is immediately runnable.
+
+- Call the React app `front-end`, since it will be used to generate the front-end of a web app - this will create a `front-end` sub-directory where all React code will live.
+
+```bash
+npx create-react-app front-end
+```
+
+---
+
+template: setup
+name: setup-4
+
+## Remove git
+
+`create-react-app` automatically installs **git** version control tracking into the directory it creates for the React code.
+
+We will want to use git to track our entire project, not just the front-end generator code. So we need to remove git from the `front-end` directory.
+
+```bash
+cd front-end
+rm -rf .git # remove the hidden directory where git keeps its files
+rm .gitignore # remove the hidden git settings file
+```
+
+---
+
+template: setup
+name: setup-5
+
+## Try it out
+
+To preview the app in a non-optimal state, try running it.
+
+Verify that your working directory is `front-end` and start up the React preview script.
+
+```bash
+npm start
+```
+
+This will run the script named `start` automatically included in the new app's configuration file - it launches a preview of the app.
+
+- All Node.js-based applications that use Node's built-in package manager, `npm`, have a configuration file named `package.json` that can include the definition of start scripts like this.
+
+---
+
+template: setup
+name: setup-6
+
+## Try generating HTML, CSS, and Javascript files
+
+The previous command previews the app. To generate the proper HTML, CSS, and browser-based Javascript files that will ultimately comprise the app front-end, run the following:
+
+```bash
+npm run build
+```
+
+This will run the script named `build` automatically included in the `package.json` configuration file.
+
+- A new sub-directory named `build` will contain the generated files.
+
+---
+
+template: setup
+name: setup-7
+
+## Poke around the file system
+
+You should familiarize with the React app files and directories.
+
+- `build/` - where the generated HTML, CSS, and browser-based Javascript will automatically be placed. Don't touch this!
+- `node_modules/` - where modules that this app depends upon will be automatically installed. Don't touch this!
+- `public/` - contains any static assets that should be copied into `build/` by the generator, such as favicon images, logo images, etc.
+- `src/` - contains the source code files that make up your app... this is where you will work on code
+- `src/index.js` - code that creates the outline of a basic HTML page and tells React to place the component named `App` onto the page. Don't touch this!
+- `src/index.css` - CSS code for basic page-wide style settings.
+- `src/App.js` - code for the `App` component loaded onto the page.
+- `src/App.css` - CSS code for styling the App component.
+- `package.json` - the standard `npm` type of configuration file with lots of app settings and a complete list of dependencies
+
+---
+
+template: setup
+name: setup-8
+
+## Set up git for the entire project
+
+Navigate to the main project directory where you will initialize git version control tracking.
+
+```bash
+cd .. # go up a level to the parent directory of both front-end and back-end
+git init # install git
+```
+
+---
+
+template: setup
+name: setup-9
+
+## Instruct git to ignore files that are not yours
+
+In the main project directory (the parent directory of `front-end` and `back-end`), create a file named `.gitignore` that will inform git of files not to track.
+
+- Copy the contents of [this example `.gitignore`](https://gist.github.com/bloombar/1bbca4aafb267920ac220864d99d6c8f) into your file.
+- This `.gitignore` will make sure that the code you write is kept under version control, but not others' code or auto-generated code.
+
+---
+
+name: setup-git
+
+# React Setup From Git
+
+---
+
+template: setup-git
+name: setup-git-1
+
+## Clone a git repository
+
+If cloning an existing React app, or a fork of an app, stored in a Git remote repository, use `git clone`, as with any git repository.
+
+```bash
+git clone https://github.com/some-username/my-app.git
+```
+
+This will create a new directory named `my-app` (or whatever name the repository had) where all the project files are stored.
+
+Navigate into this directory and to any sub-directory where the standard `npm` configuration file named `package.json` is, and run `npm install` in order to install any necessary dependencies for this project.
+
+```bash
+npm install
+```
+
+---
+
+template: setup-git
+
+## Follow along
+
+The React.js code examples in this slide deck are available on GitHub - the code is already set up and ready to run.
+
+--
+
+- Fork and clone [the companion git repository](https://github.com/nyu-software-engineering/react-js-starter-app).
+
+--
+
+- Follow [the instructions on setting up a project cloned from git](#setup-git).
+
+---
+
+name: components
+
+# Components
+
+---
+
+template: components
+name: components-1
+
+## Concept
+
+A React component is a modular, reusable user interface element.
+
+- Javascript to define components can be written in one of two ways: as a class, or as a function
+
+---
+
+template: components
+name: components-1
+
+## Component classes
+
+Defining a component with a Javascript class is the most common way, because it was the original way React designed them.
+
+Here is a component class named `Hello` that represents a paragraph of text.
+
+```jsx
+class Hello extends Component {
+  render() {
+    return <p>Hello world!</p>
+  }
+}
+```
+
+---
+
+template: components
+name: components-2
+
+## Component functions
+
+Defining a component as a function is now the preferred way and simplifies the code a bit.
+
+```jsx
+function Hello() {
+  return <p>Hello world!</p>
+}
+```
+
+The same function can be written this way, if you remember your Javascript fat arrow syntax:
+
+```jsx
+const Hello = () => <p>Hello world!</p>
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/dmeovLta/11/)
+
+---
+
+template: components
+name: components-3
+
+## JSX
+
+This embedding of HTML-like code into the middle of Javascript code is not ordinary Javacript - it is React's **JSX**.
+
+- JSX allows you to write your interface code in an HTML-like way that is familiar to most web and app developers
+- React automatically replaces JSX with the equivalent Javascript code to create these interface elements.
+
+```jsx
+const Foo = () => {
+  return <p>Doesn't this look a lot like HTML code in your Javascript?!</p>
+}
+```
+
+---
+
+template: components
+name: components-4
+
+## Multi-element components
+
+Components can contain multiple user interface elements.
+
+- However, all components must have one 'root' element that encompasses all other sub-elements.
+- Note the parentheses around the expression that is being returned - this is necessary for multi-element components.
+
+```jsx
+const Hello = () => {
+  return (
+    <div>
+      <h1>React Component</h1>
+      <p>Hello world!</p>
+    </div>
+  )
+}
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/dmeovLta/5/)
+
+---
+
+template: components
+name: components-5
+
+## Components are not exactly HTML
+
+While JSX components look almost identical to HTML code, and _there is a React component for every HTML element by the same name_, they are not HTML and have some slightly different behavior.
+
+For example, to add a class to an HTML element, you use the `class` attribute.
+
+```html
+<p class="my_favorite_paragraphs">Ipsum dolor sit amet lorem.</p>
+```
+
+To have React render that same HTML, you would have to use the `className` attribute in JSX (unlike HTML, all attributes in JSX have lowerCamelCase names):
+
+```html
+<p className="my_favorite_paragraphs">Ipsum dolor sit amet lorem.</p>
+```
+
+Supposedly, this is because `class` is a reserved word in Javascript, and JSX code is transpiled to Javascript behind-the-scenes.  We find that justification lacking.
+
+---
+
+template: components
+name: components-6
+
+## Components are not exactly HTML (continued)
+
+Attributes in HTML typically have quotes around their values.
+
+```html
+<p class="my_favorite_paragraphs">Ipsum dolor sit amet lorem.</p>
+```
+
+If injecting a variable or other expression as the value for an attribute in JSX, you cannot surround the variable in quotes, but it does have to be in curly brackets.
+
+```html
+<p className={someVariable}>Ipsum dolor sit amet lorem.</p>
+```
+
+[Read more](https://reactjs.org/docs/introducing-jsx.html#specifying-attributes-with-jsx)
+
+---
+
+template: components
+name: components-7
+
+## Components are not exactly HTML (continued again)
+
+HTML allows CSS styles to be written inline in an HTML element in a special `style` attribute:
+
+```html
+<p style="color: blue; background-color: pink;">Ipsum dolor sit amet lorem.</p>
+```
+
+JSX requires a Javascript object to be passed as the `style` attribute value.
+
+```javascript
+const pStyle = {
+    color: 'blue',
+    backgroundColor: 'pink'; // notice the camelCase style property names - this is Javascript, not CSS!
+}
+```
+
+And injected into the JSX without quotes around it.
+
+```html
+<p style={pStyle}>Ipsum dolor sit amet lorem.</p>
+```
+
+[Read more](https://reactjs.org/docs/dom-elements.html#style)
+
+---
+
+template: components
+
+## Components are not exactly HTML (one last time)
+
+Interactive behaviors can be attached to elements in HTML with **case-insensitive** attributes, such as `onclick`, `onmouseover`, `onmouseout`, [and more](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers), and usually including code for a simple **function call** that is automatically executed when the interactive event occurs.
+```html
+<p onclick="someFunction()">click me</p>
+```
+
+In React, equivalent behaviors are written with **lowerCamelCase** attributes  and must to refer to a **function definition** that is automatically called when the interactive event occurs.
+```html
+<p onClick={someFunction}>click me</p>
+```
+
+---
+
+template: components
+name: components-8
+
+## Styling components
+
+- React developers are encouraged to use **one external CSS file for every one React component file**.
+- Inline styles, whether in React JSX or in plain HTML, are considered **a bad practice** - don't use them!
+- For example a component named `Article.js` should have a corresponding CSS file named `Article.css`
+- The component file then imports the CSS file using Javascript import syntax.
+
+```javascript
+import "./Article.css"
+```
+
+---
+
+template: components
+name: components-9
+
+## Styling components (continued)
+
+Given the following JSX:
+
+```html
+<article className="intro">
+  <h1 className="intro-heading">React Component</h1>
+  <p className="intro-paragraph">Hello world!</p>
+</article>
+```
+
+React CSS should **select components by their `className` attribute**, not by the type of HTML element they are rendered as, since this may vary.
+
+```css
+.intro {
+  border: 1px solid red;
+}
+.intro-heading {
+  font-family: georgia;
+}
+/* etc */
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/pjfe9knc/5/)
+
+---
+
+name: props
+
+# Props
+
+---
+
+template: props
+name: props-1
+
+## Accepting arguments
+
+Props are arguments passed to a component that can influence its content or behavior.
+
+This custom `Article` component accepts a props object as its argument and injects some of the values therein into the JSX content:
+
+```jsx
+const Article = (props) => {
+  return (
+    <article>
+      <h1>{props.heading}</h1>
+      <p>{props.paragraph</p>
+    </article>
+  )
+}
+```
+
+---
+
+template: props
+name: props-2
+
+## Accepting arguments
+
+Using Javascript's object [destructuring](../javascript-intro/#100), this function could be rewritten:
+
+```jsx
+const Article = ( { heading, paragraph }) => {
+  return (
+    <article>
+      <h1>{heading}</h1>
+      <p>{paragraph</p>
+    </article>
+  )
+}
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/1j4udLtk/45/)
+
+---
+
+template: props
+name: props-3
+
+## Passing props
+
+This custom `Section` component includes two `Article` components nested within it
+
+- Each `Article` is passed two values to be placed automatically into the `props` parameter object
+
+```jsx
+const Section = () => {
+  return (
+    <section>
+      <article
+        heading="Puppies for Sale"
+        paragraph="Get 'em while they last!'"
+      />
+      <article heading="Free Kittens" paragraph="Anytime, anywhere!'" />
+    </section>
+  )
+}
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/1j4udLtk/43/)
+
+---
+
+template: props
+name: props-4
+
+## Functions as arguments
+
+Javascript, of course, has **higher-order functions**, and can accept function definitions as arguments to a function call.
+
+For example, this component will call any function passed to it as an argument named `action` whenever the user clicks the paragraph:
+
+```jsx
+const Card = props => {
+  return (
+    <div>
+      <p onClick={props.action}>Click me!</p>
+    </div>
+  )
+}
+```
+
+Note the lowerCamelCase spelling of the `onClick` attribute, like all JSX attributes.
+
+---
+
+template: props
+name: props-5
+
+## Functions as arguments (continued)
+
+We could easily pass the definition of the function to run as one of the `props` properties in the component that includes the `Card` component we defined:
+
+```jsx
+<Card action={ () => { alert("See what I mean? Javascript is fun!") } } />
+<Card action={ () => { fetch('https://my.api.mockaroo.com/animals.json?key=d9ddfc40') } } />
+```
+
+[Try it!](https://jsfiddle.net/barsteinfoo/okd64s7g/20/)
+
+---
+
+template: props
+name: props-6
+
+## Summary
+
+Props are a jargon word for arguments passed to a function that represents a component.
+
+- when using JSX to include a component, arguments are passed to the component as JSX attributes, e.g. `<Article heading="Free Kittens" />`
+
+- any type of value can be passed as an argument to a component within the props object: a string, number, function definition, object, array, etc.
+
+- Learn more about [components and props](https://reactjs.org/docs/components-and-props.html)
+
+---
+
+name: state
+
+# State
+
+---
+
+template: state
+name: state-1
+
+## Concept
+
+In React, **state** variables help keep track of the internal state of the component.
+
+- In functional components, state variables must be initialized by calling React's `useState()` function.
+
+```javascript
+// create a state variable with default value 0
+// store a reference to the variable, and a reference to a function that can be called to change its value
+const [count, setCount] = useState(0)
+```
+
+---
+
+template: state-1
+name: state-1a
+
+This code creates a state variable named `count`.
+
+- pass `useState()` an argument with the default value you want the state variable to hold
+- `useState()` returns an array with two elements: a reference to that value and the definition of a function you can call to change that value
+- this returned array is then _destructured_ into two separate variables
+
+---
+
+template: state
+name: state-2
+
+## Binding
+
+State variables can be injected into any JSX component, just like any other Javascript expression.
+
+```html
+<p>You clicked the button {count} times</p>
+```
+
+---
+
+template: state
+name: state-3
+
+## Binding (continued)
+
+Unlike other expressions, any changes to the value stored in a state variable will be immediately updated in the component.
+
+```jsx
+const MyComponent = () => {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <p>You clicked the button {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+Anytime the button is clicked, the state variable is incremented, and the paragraph automatically shows the updated number.
+[Try it](https://codesandbox.io/s/unruffled-nash-hpz2d)
+
+---
+
+name: side-effects
+
+# Side-Effects
+
+---
+
+template: side-effects
+name: side-effects-1
+
+## Concept
+
+Every time React renders a component onto the web page, such as when the page first loads or after a change in state, it is possible to run **side-effects**.
+
+- The term "side-effect" comes from **[functional programming](https://www.youtube.com/watch?v=fsVL_xrYO0w)**, where it refers to running any code that is not the main purpose of a function, but is included within it for convenience.
+- In functional programming, _side-effects are considered bad code_. In React, they're included by design.
+
+---
+
+template: side-effects
+name: side-effects-2
+
+## The useEffect function
+
+You can define a function within the component that indicates any side-effects you desire, and pass it to React's `useEffect` function.
+
+- React's code will automatically executed this callback function any time a component is rendered or re-rendered.
+- You can define as many separate `useEffect` callbacks as you'd like.
+
+```javascript
+useEffect(() => {
+  // write whatever code you want run every time the component renders.
+  console.log("the component has rendered or re-rendered!")
+})
+```
+
+---
+
+template: side-effects
+name: side-effects-3
+
+## Watching for state variable changes
+
+You may not want to run the code within `useEffect`'s callback function every time the component renders.
+
+An **optional second argument** accepts an array. If any variable in the array's value has changed since last time the component was rendered, the `useEffect` callback will be executed.
+
+```javascript
+useEffect(() => {
+  // write whatever code you want run every time the component renders.
+  console.log("the component has rendered or re-rendered!")
+}, [count])
+```
+
+---
+
+template: side-effects-3
+name: side-effects-3a
+
+It is usually the practice to place specific state variables you want to watch into this array.
+
+- Any time those state variables have their values changed, the side-effect code will be run.
+  [Try it!](https://codesandbox.io/s/confident-ives-092ff)
+
+---
+
+template: side-effects
+name: side-effects-4
+
+## Cleaning up after side-effect code
+
+Some side-effects will need to be undone if a component is removed from the page.
+
+- **cleanup functions** can be given as the optional return value to any `useEffect` callback.
+
+```javascript
+useEffect(() => {
+  console.log("the component has rendered or re-rendered!")
+  return () =>
+    console.log("the component has been completely removed from the page!")
+}, [count])
+```
+
+---
+
+template: side-effects
+name: side-effects-5
+
+## A practical example
+
+The following `useEffect` callback sets up an **eventListener** - a function to be called automatically whenever the browser window width changes.
+
+- If this component is completely removed from the page, the returned function will be called and it will remove this eventListener.
+- This way, any time this component is reloaded into a web page, it can start from scratch without worrying about any previously created eventListeners.
+
+```javascript
+useEffect(() => {
+  const handleResize = () => setWidth(window.innerWidth)
+  window.addEventListener("resize", handleResize)
+  return () => window.removeEventListener("resize", handleResize)
+}, [])
+```
+
+---
+
+template: side-effects
+name: side-effects-6
+
+## Running a side-effect only once
+
+Note the blank array as second argument to `useEffect` in the [previous example](#side-effects-5).
+
+- As you know, any changes to values of variables in this array cause the `useEffect` function to run... but this array has no values!
+- This is the way to make this `useEffect` callback only be executed once when this component is first loaded onto a page.
+- This side-effect will not be re-called for any re-renders.
+
+---
+
+name: fetch
+
+# Fetching Data From Servers & APIs
+
+---
+
+template: fetch
+name: fetch-1
+
+## Concept
+
+It is often the case that front-end Javascript code fetches data from a back-end web server or API.
+
+- Some or all of that data is often then injected into the visible page
+
+How does front-end code request, receive, and process data from the back-end?
+
+---
+
+template: fetch
+name: fetch-2
+
+## Data structures
+
+Data retrieved from a server can come in any structure. However, it's not uncommon to receive [an array of JSON objects](https://my.api.mockaroo.com/animals.json?key=d9ddfc40).
+
+```js
+[
+  {
+    id: 1,
+    title: "Mule deer",
+    country: "Brazil",
+    price: "$27.77",
+    description:
+      "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+  },
+  {
+    id: 2,
+    title: "Monkey, bleeding heart",
+    country: "Malaysia",
+    price: "$13.30",
+    description:
+      "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+  },
+  // etc
+]
+```
+
+---
+
+template: fetch
+name: fetch-2
+
+## Axios
+
+Axios is a popular 3rd-party module that makes it easy to fetch data from a server.
+
+- The `axios` function makes an asynchronous request to a server
+- We can wait for that request to resolve and then retrieve the data.
+
+```javascript
+// fetch some mock data about animals for sale
+const response = await axios(
+  "https://my.api.mockaroo.com/animals.json?key=d9ddfc40"
+)
+// extract the data from the server response
+const data = response.data
+```
+
+---
+
+template: fetch-2
+name: fetch-2a
+
+In the case of React, we can also add that data a state variable we have previously initialized.
+
+```javascript
+setData(response.data)
+```
+
+---
+
+template: fetch
+name: fetch-3
+
+## Iterating through an array of objects
+
+Assuming the variable, `data`, contains an array of objects, we can iterate through it the standard way.
+
+```javascript
+data.map(item => (
+    console.log( item );
+))
+```
+
+---
+
+template: fetch
+name: fetch-4
+
+## Outputting JSX from an array
+
+In the case of React, where the data is stored in a state variable, we can place the loop within a JSX component.
+
+```jsx
+<div>
+  <h1>Animals For Sale</h1>
+  <section className="animals">
+    {data.map(item => (
+      <Animal key={item.id} details={item} />
+    ))}
+  </section>
+</div>
+```
+
+- For every element in the array, an `Animal` component will be rendered.
+- When rendering multiple instances of the same component, React requires you to pass each a unique identifier named `key`.
+- Note how we pass the entire object to the component in the `details` props attribute.
+
+---
+
+template: fetch
+name: fetch-5
+
+## Outputting JSX from an array
+
+The `Animal` component can now use the object's information by accessing it in the `props` parameter.
+
+```jsx
+const Animal = props => {
+  return (
+    <article className="animal">
+      <h2>{props.details.title}</h2>
+      <address>{props.details.country}</address>
+      <strong>{props.details.price}</strong>
+      <p>{props.details.description}</p>
+    </article>
+  )
+}
+```
+
+[Try it!](https://codesandbox.io/s/exciting-black-kzp7t)
+
+---
+
+name: links
+
+# Linking From One Screen To Another
+
+---
+
+template: links
+name: links-1
+
+## The 'a' component
+
+As with its HTML `a` element equivalent, the JSX `a` component provides the simplest a way to link from one screen to another.
+
+```html
+<a href="/puppies-for-sale">Click me!</a>
+```
+
+As with all JSX attributes, Javascript variables or expressions can be injected as the link's `href` attribute value if desired:
+
+```jsx
+<a href={`/puppies/${puppyId}`}>Click me!</a>
+```
+
+---
+
+template: links
+name: links-2
+
+## The react-router-dom module
+
+[react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) is a 3rd-party module that provides streamlined navigation solutions, including:
+
+- setting up client-side **routes** - customized URLs in the browser address bar that are mapped to specific components
+- setting up a **global navigation** appears on all screens
+- simple linking from one component to another
+- and more...
+
+To include it in a project, use `npm install` to save it as a dependency in the `package.json` configuration file:
+
+```bash
+npm install --save react-router-dom
+```
+
+Then import into your code:
+
+```javascript
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom" // as n example, we are here importing just those components useful for setting up front-end routes
+```
+
+---
+
+template: links
+name: links-2a
+
+## The react-router-dom module (continued)
+
+For example, the following sets up a few mutually-exclusive front-end **routes**, indicating the components that should be loaded at each URL.
+
+```jsx
+<Router>
+  <Header />
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/animals" element={<AnimalsList />} />
+    <Route path="/animals/:id" element={<Animal />} />
+  </Routes>
+
+  <Footer />
+</Router>
+```
+
+---
+
+template: links
+name: links-3
+
+## The react-burger-menu module
+
+[react-burger-menu](https://www.npmjs.com/package/react-burger-menu) is a 3rd-party module that provides streamlined [hamburger menu](https://en.wikipedia.org/wiki/Hamburger_button) functionality':
+
+To include it in a project, use `npm install` to save it as a dependency in the `package.json` configuration file:
+
+```bash
+npm install --save react-burger-menu
+```
+
+Then import into your code:
+
+```javascript
+import { slide as Menu } from "react-burger-menu"
+```
+
+---
+
+name: conclusions
+
+# Conclusions
+
+---
+
+template: conclusions
+name: conclusions
+
+Now you have some understanding of using React to generate HTML, CSS, and Javascript for a client-side web pages.
+
+- Now install the [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) into your browser.
+- A [sample full MERN-stack app](https://github.com/nyu-software-engineering/full-mern-stack-web-app) shows many of the core features of React and `react-router-dom`.
+- Another [React.js-only project](https://github.com/nyu-software-engineering/react-js-starter-app) with mock login functionality on the front-end but no back-end.
+- Thank you. Bye.
+
+---
