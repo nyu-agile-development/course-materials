@@ -8,7 +8,7 @@ class: center, middle
 
 # Release Management
 
-Agile Software Development & DevOps
+An organized approach to versioning software releases.
 
 ---
 
@@ -22,18 +22,19 @@ Agile Software Development & DevOps
 
 ---
 
-class: center, middle
 name: overview
 
 # Overview
 
----
+--
 
 ## Concept
 
 Release management is the streamlined approach to issuing software releases.
 
 ---
+
+template: overview
 
 ## Contents
 
@@ -48,6 +49,8 @@ What is in a release? The following are some common contents:
 
 ---
 
+template: overview
+
 ## Release Timing
 
 The date on which a release is published is often dependent upon a number of factors:
@@ -56,16 +59,15 @@ The date on which a release is published is often dependent upon a number of fac
 - the release schedules of technical dependencies
 - the release schedules of the competition
 - marketing parternships and promotions
-- business reasons why one particular date might be better than another (e.g. [using [predictive analytics](https://en.wikipedia.org/wiki/Predictive_analytics))
+- business reasons why one particular date might be better than another
 
 ---
 
-class: center, middle
 name: semantic-versioning
 
 # Semantic Versioning
 
----
+--
 
 ## Concept
 
@@ -81,17 +83,24 @@ Where...
 
 ---
 
+name: rules
+template: semantic-versioning
+
 ## Rules
 
 Semantic Versioning requires 12 rules. The first 8 are the most important and are included here.
 
 ---
 
-## Rule 1: Public API
+template: rules
+
+### Rule 1: Public API
 
 Software using Semantic Versioning MUST declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
 
 ---
+
+template: rules
 
 ## Rule 2: Version Number Format
 
@@ -99,11 +108,15 @@ A normal version number MUST take the form X.Y.Z where X, Y, and Z are non-negat
 
 ---
 
+template: rules
+
 ## Rule 3: Immutability of Versions
 
 Once a versioned package has been released, the contents of that version MUST NOT be modified. Any modifications MUST be released as a new version.
 
 ---
+
+template: rules
 
 ## Rule 4: In-Develepment API Version
 
@@ -111,11 +124,15 @@ Major version zero (0.y.z) is for initial development. Anything may change at an
 
 ---
 
+template: rules
+
 ## Rule 5: Initial Public API Version
 
 Version 1.0.0 defines the public API. The way in which the version number is incremented after this release is dependent on this public API and how it changes.
 
 ---
+
+template: rules
 
 ## Rule 6: Patch Versions
 
@@ -123,11 +140,15 @@ Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards compatible
 
 ---
 
+template: rules
+
 ## Rule 7: Minor Versions
 
 Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards compatible functionality is introduced to the public API. It MUST be incremented if any public API functionality is marked as deprecated. It MAY be incremented if substantial new functionality or improvements are introduced within the private code. It MAY include patch level changes. Patch version MUST be reset to 0 when minor version is incremented.
 
 ---
+
+template: rules
 
 ## Rule 8: Major Versions
 
@@ -135,18 +156,19 @@ Major version X (X.y.z | X > 0) MUST be incremented if any backwards incompatibl
 
 ---
 
-class: center, middle
 name: git-tags
 
 # Git Tags
 
----
+--
 
 ## Concept
 
 Git's tagging features can be used to mark the repository at a moment in time as a particular release.
 
 ---
+
+template: git-tags
 
 ## Create Tag
 
@@ -158,6 +180,8 @@ git tag v1.0.0
 
 ---
 
+template: git-tags
+
 ## Create Tag with a Message
 
 Leave an optional message to go along with a tag.
@@ -168,6 +192,8 @@ git tag -a v1.0.0 -m "initial version of the coffee grind future fineness predic
 
 ---
 
+template: git-tags
+
 ## Push Tag
 
 Push the release to an upstream remote repository, such as GitHub:
@@ -177,6 +203,8 @@ git push origin v1.0.0
 ```
 
 ---
+
+template: git-tags
 
 ## Switch to Tag
 
@@ -189,11 +217,10 @@ git checkout -b master v1.0.0
 ---
 
 name: github
-class: center, middle
 
 # GitHub Releases
 
----
+--
 
 ## Concept
 
@@ -204,7 +231,6 @@ GitHub's Releases functionality makes creating a Git tag for aa release more int
 ---
 
 name: conclusions
-class: center, middle
 
 # Conclusions
 
