@@ -8,7 +8,7 @@ class: center, middle
 
 # Feature Branch Version Control Workflow
 
-Agile Software Development & DevOps
+Working on code in isolation and incorporating peer review
 
 ---
 
@@ -21,12 +21,11 @@ Agile Software Development & DevOps
 
 ---
 
-class: center, middle
 name: overview
 
 # Overview
 
----
+--
 
 ## Concept
 
@@ -35,6 +34,8 @@ Software projects in this course will follow a "feature branch" version control 
 Following this workflow allows team members to work independently while minimizing code code conflicts.
 
 ---
+
+template: overview
 
 ## Repositories
 
@@ -45,12 +46,11 @@ The feature branch workflow requires each developer to have access to two reposi
 
 ---
 
-class: center, middle
 name: making-changes
 
 # Making Changes
 
----
+--
 
 ## Pull from central repository
 
@@ -70,9 +70,11 @@ git pull origin master
 
 ---
 
+template: making-changes
+
 ## Create a new local branch
 
-With the latest code downloaded, create a new branch and "check it out". The name of the branch must refer to the user story, task, or spike associated with the changes that will be made.
+With the latest code downloaded, create a new branch and "check it out". The name of the branch should refer to the user story, task, or spike associated with the changes that will be made.
 
 Example for a Task with identification number 9 belonging to a User Story with identification number 13:
 
@@ -88,11 +90,15 @@ git checkout -b spike/6/install-mongo-db-locally
 
 ---
 
+template: making-changes
+
 ## Update task board
 
 In the GitHub Task Board for this Sprint, move the card for this Task or Spike to the appropriate "In Process" column.
 
 ---
+
+template: making-changes
 
 ## Make changes locally
 
@@ -104,6 +110,8 @@ Pop open your favorite code editor and go crazy.
 
 ---
 
+template: making-changes
+
 ## Commit changes to the local branch
 
 Add all changed files to the branch in the local repository.
@@ -114,6 +122,8 @@ git commit -m "Implementing user login task from user story #13"
 ```
 
 ---
+
+template: making-changes
 
 ## Merge with latest code from central repository trunk
 
@@ -128,6 +138,8 @@ git merge origin/master
 
 ---
 
+template: making-changes
+
 ## Push branch to remote repository
 
 Once the feature branch has been merged with any recent changes to the master branch, it's time to upload the feature branch to the shared remote repository.
@@ -140,6 +152,8 @@ git push origin user-story/13/task/9/user-login
 
 ---
 
+template: making-changes
+
 ## Issue pull request
 
 Once the feature branch has been pushed to the remote repository, the developer must issue a Pull Request to their teammates requesting that they accept the changes into the `master` branch.
@@ -148,18 +162,19 @@ This Pull Request must be made using GitHub, and assigned to the teammates. This
 
 ---
 
+template: making-changes
+
 ## Update task board
 
 In the GitHub Task Board for this Sprint, move the card for this Task or Spike to the appropriate "Awaiting Review" column.
 
 ---
 
-class: center, middle
 name: peer-review
 
 # Peer Review
 
----
+--
 
 ## Review a pull request
 
@@ -179,6 +194,8 @@ Look at the code, test it, Try it, etc.... make sure it works!
 
 ---
 
+template: peer-review
+
 ## Merge changes locally
 
 If approved, the reviewer and the original developer coordinate so that one of them merges the changes in the feature branch into the `master` branch.
@@ -195,6 +212,8 @@ git merge user-story/13/task/9/user-login
 
 ---
 
+template: peer-review
+
 ## Upload changes to remote repository
 
 Once the changes have been merged into the local `master` branch, the developer who merged must upload the changes to the remote repository.
@@ -207,13 +226,14 @@ git push origin master
 
 ---
 
+template: peer-review
+
 ## Update task board
 
 Whoever merged the code must now move the corresponding Task into the "Done" column of the task board.
 
 ---
 
-class: center, middle
 name: conclusions
 
 # Conclusions
