@@ -8,7 +8,7 @@ class: center, middle
 
 # GitHub for Collaboration
 
-Agile Software Development & DevOps
+More nuanced usage of GitHub for developer collaboration.
 
 ---
 
@@ -18,7 +18,6 @@ Agile Software Development & DevOps
 2. [Teams](#teams)
 3. [README.md](#readme)
 4. [CONTRIBUTING.md](#contributing)
-5. [REQUIREMENTS.md](#requirements)
 6. [Issues](#issues)
 7. [Labels](#issues)
 8. [Milestones](#milestones)
@@ -27,12 +26,11 @@ Agile Software Development & DevOps
 
 ---
 
-class: center, middle
 name: organization
 
 # Organization
 
----
+--
 
 ## Account types
 
@@ -45,6 +43,8 @@ Both types of accounts can host repositories.
 
 ---
 
+template: organization
+
 ## Management
 
 A manager maintains an organization account.
@@ -53,18 +53,19 @@ The organization's projects are stored as repositories belonging to this account
 
 ---
 
+template: organization
+
 ## Membership
 
 Personal accounts can be included as members of an organization.
 
 ---
 
-class: center, middle
 name: teams
 
 # Teams
 
----
+--
 
 ## Teams
 
@@ -76,12 +77,11 @@ An organization manager can assign permissions to a repository to a team as a wh
 
 ---
 
-class: center, middle
 name: readme
 
 # README.md
 
----
+--
 
 ## Concept
 
@@ -91,6 +91,8 @@ This document serves as an introduction to the project to any visitors.
 
 ---
 
+template: readme
+
 ## Minimal contents
 
 At a minimum, a README.md document includes:
@@ -98,18 +100,18 @@ At a minimum, a README.md document includes:
 - a _simple_ description of project
 - a _short_ origin story of the project
 - a _descriptive_ link to the [CONTRIBUTING.md](#contributing) document
-- a _descriptive_ link to the [REQUIREMENTS.md](#requirements) document
 - how to _build_ and _test_ the project (once the project reaches that stage)
 - any additional relevant links or info
 
 ---
 
-class: center, middle
 name: contributing
 
 # CONTRIBUTING.md
 
 ---
+
+template: contributing
 
 ## Concept
 
@@ -119,38 +121,23 @@ This serves as a sort of contractual agreement among developers and contributors
 
 ---
 
+template: contributing
+
 ## Minimal contents
 
 At a minimum, a CONTRIBUTING.md document contains:
 
-- team values
-- team norms
 - a description of the workflow
 - rules: what to contribute, what not to contriute, etc.
+- how a new developer must set up their development environment to successfully be able to run the code and work on the project
 
 ---
 
-class: center, middle
-name: requirements
-
-# REQUIREMENTS.md
-
----
-
-## Concept
-
-The REQUIREMENTS.md document serves as an [initial written draft of the project's requirements](https://knowledge.kitchen/Requirements_gathering_assignment).
-
-This will soon be superceded by the Product Backlog.
-
----
-
-class: center, middle
 name: issues
 
 # Issues
 
----
+--
 
 ## Concept
 
@@ -160,9 +147,11 @@ An _issue_ is usually be a bug to fix or a feature to implement.
 
 ---
 
+template: issues
+
 ## Agile issues
 
-In Agile software development, an issue is of one of the following types:
+In "agile" software development, an issue is of one of the following types:
 
 - **User story** - a user requirement, written in a specific style
 - **Task** - one unit of work towards a user story
@@ -170,20 +159,26 @@ In Agile software development, an issue is of one of the following types:
 
 ---
 
+template: issues
+
 ## Product Backlog
 
-The full set of user story issues make up the Product Backlog.
+In "agile" software development, the full set of user stories make up the Product Backlog.
 
 ---
 
-## User Story Issues
+template: issues
+
+## User Stories
 
 User story issue titles are written in the style,
 `As a ___, I want to ___ so I can ___`.
 
-The issue description must also include an Estimation of Effort and Acceptance Criteria.
+The issue description can also include an Estimation of Effort and Acceptance Criteria.
 
 ---
+
+template: issues
 
 ## Issue Descriptions
 
@@ -211,14 +206,13 @@ XS
 
 ---
 
-class: center, middle
 name: labels
 
 # Labels
 
----
+--
 
-# Concept
+## Concept
 
 Any GitHub issue can be tagged with arbitrary labels.
 
@@ -228,9 +222,11 @@ No issue should be without a label.
 
 ---
 
-# Concept
+template: labels
 
-At a minimum, the following labels should be used:
+## Minimal contents
+
+For agile software development, at a minimum, the following labels should be available to apply to any issue:
 
 - `user story` to label user stories
 - `task` to label tasks
@@ -238,12 +234,11 @@ At a minimum, the following labels should be used:
 
 ---
 
-class: center, middle
 name: milestones
 
 # Milestones
 
----
+--
 
 ## Concept
 
@@ -253,9 +248,11 @@ This is used to indicate which Issues must be resolved in order for the mileston
 
 ---
 
+template: milestones
+
 ## Sprint Milestones
 
-In Agile development, create the following Milestones for each sprint:
+In "agile" development, for example, you may create the following Milestones for each sprint:
 
 - `sprint 0`
 - `sprint 1`
@@ -267,11 +264,15 @@ Set the due date of each Sprint to be the day before the following sprint begins
 
 ---
 
+template: milestones
+
 ## Assign Milestones to Issues
 
 In Sprint Planning, where an agile development team decides which user stories to tackle for an upcoming sprint, the issues selected for the sprint must be assigned the relevant Milestone in GitHub.
 
 ---
+
+template: milestones
 
 ## Closing a Milestone
 
@@ -283,12 +284,11 @@ Leave the Issues as-is and feel free to additionally assign a subsequent Milesto
 
 ---
 
-class: center, middle
 name: task-boards
 
 # Task Boards
 
----
+--
 
 ## Concept
 
@@ -299,6 +299,8 @@ A Task Board shows the current status of all issues asssigned to a given sprint.
 One look at this board shows what has been done, and what is left to do.
 
 ---
+
+template: task-boards
 
 ## Columns
 
@@ -312,6 +314,8 @@ A Scrum task board must have the following columns:
 
 ---
 
+template: task-boards
+
 ## Closing a tasks board
 
 **Do not retroactively alter the history of a project** by changing anything in a task board once the relevant sprint is over.
@@ -321,7 +325,6 @@ A Scrum task board must have the following columns:
 
 ---
 
-class: center, middle
 name: conclusions
 
 # Conclusions
