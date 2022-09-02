@@ -8,7 +8,7 @@ class: center, middle
 
 # Project Kickoff
 
-Agile Software Development & DevOps
+Setting appropriate expectations
 
 ---
 
@@ -20,7 +20,7 @@ Agile Software Development & DevOps
 4. [GitHub](#github)
 5. [Product Backlog](#product-backlog)
 6. [Planning Poker](#planning-poker)
-7. [Sprint Backlogs](#sprint-backlog)
+7. [Sprint Backlogs](#sprint-backlogs)
 8. [Task Boards](#task-boards)
 9. [Git](#git)
 10. [Daily Standups](#standups)
@@ -28,66 +28,54 @@ Agile Software Development & DevOps
 
 ---
 
-class: center, middle
 name: ready-set-go
 
 # Ready, Set, Go!
 
----
+--
 
 ## Kickoff
 
-Teams are by now well into their projects. Let's make sure your workflow and expectations are in order.
+Teams are know working on their projects. Let's make sure your workflow and expectations are in order.
 
 ---
+
+template: ready-set-go
 
 ## Sprints
 
 Work is divided into increments:
 
-- Sprint 0 - learn your dev environment and workflow
-- Sprint 1 - build out the most fundamental features
-- Sprint 2 - implement secondary features
-- Sprint 3 - make the app fully usable but rough
-- Sprint 4 - finesse what you've done
+- Sprint 0 - quick prototyping
+- Sprint 1 - focus on front-end development
+- Sprint 2 - adding in back-end development
+- Sprint 3 - adding in database integration
+- Sprint 4 - finishing what you've started
 
 ---
 
-## Sprint 0
-
-Sprint 0 is intend to give you time to:
-
-- Set up and become familiar with your development environment
-- Teach yourself technologies you don't already know
-- Set up team communications and workflows
-
-It is up to you to use this time wisely.
-
-By Sprint 1, you are expected to be able to be a contributing team member.
-
----
+template: ready-set-go
 
 ## Expectations
 
-- Teams [divide labor](#division-of-labor) fairly and wisely.
+- Teams [divide labor](#labor) fairly and wisely.
 - Teams communicate primarily in-person and through [Discord](#discord).
 - Teams use [GitHub](#github) as both a central code repository and a project management tool.
-- The [Product Backlog](#product-backlog) represents the full list of user requirements of the project.
+- The [Product Backlog](#product-backlog) represents the full list of user requirements of the project.  It gets updated regularly.
 - Teams estimate work using [Planning Poker](#planning-poker) cards.
-- A [Sprint Backlog](#sprint backlog) shows which user requirements are being worked on during the current Sprint.
-- A [Task Boards](#task-boards) shows the up-to-date status of all work at all times.
+- A [Sprint Backlog](#sprint-backlogs) shows which user requirements are being worked on during the current Sprint.
+- A [Task Board](#task-boards) shows the up-to-date status of all work at all times.
 - Individuals use [Git](#git) systematically to isolate code and track changes.
 - Teams meet primarily in person for [Daily Standups](#daily-standups).
 - **At the end of each Sprint is the release of a working, but incomplete, product**.
 
 ---
 
-class: center, middle
-name: discord
+name: labor
 
 # Division of Labor
 
----
+--
 
 ## Wise Use of Human Resources
 
@@ -100,12 +88,11 @@ name: discord
 
 ---
 
-class: center, middle
 name: discord
 
 # Discord
 
----
+--
 
 ## Channels
 
@@ -114,9 +101,11 @@ Each team must have two private channels set up in Discord, e.g.:
 - `team_octapus` - general discussion
 - `team_octapus_standups` - after each standup, document each member's answers to the three questions
 
-Key stakeholders - professor, course assistant, tutor, grader - must be invited.
+Key stakeholders - professor and any course assistants, tutors, and graders - must be invited.
 
 ---
+
+template: discord
 
 ## Organization
 
@@ -128,12 +117,11 @@ Communicate with other teams via Discord. Help each other. Take initiative.
 
 ---
 
-class: center, middle
 name: github
 
 # GitHub
 
----
+--
 
 ## Repository
 
@@ -143,10 +131,11 @@ All repositories must include:
 
 - **README.md** - an always up-to-date overview of the project
 - **CONTRIBUTING.md** - detailed instructions that govern participation in the project
-- **REQUIREMENTS.md** - initial product requirements that will be out-of-date soon
 - **.gitignore** - a Git settings file that instructs git to not track certain directories and files
 
 ---
+
+template: github
 
 ## Gitignore
 
@@ -159,22 +148,23 @@ This file must instruct git to ignore (i.e. not track):
 - **any files containing authentication credentials** - e.g. database username/password, Spotify API credentials, etc.
 - **any files containing personal information** - e.g. if your app stores data about users in files or databases, don't track those
 
-Start with this [example `.gitignore` file](https://gist.github.com/bloombar/1bbca4aafb267920ac220864d99d6c8f) and add to it as necessary.
+Here is an [example general-purpose `.gitignore` file](https://gist.github.com/bloombar/1bbca4aafb267920ac220864d99d6c8f).
 
 ---
 
-class: center, middle
 name: product-backlog
 
 # Product Backlog
 
----
+--
 
 ## User Stories
 
-Before work on a project can begin, it must have an initial Product Backlog - a set of user requirements for the project written in User Story form.
+Before work on a project can begin, it must have an initial *Product Backlog* - a set of user requirements for the project written in User Story form.
 
 ---
+
+template: product-backlog
 
 ## Issues
 
@@ -186,12 +176,15 @@ Every GitHub repository has an `Issues` tab where User Stories in the Product Ba
 
 ---
 
+template: product-backlog
+
 ## Label
 
 Create an Issue for each User Story in the Product Backlog and assign it the `user story` label to differentiate it from other types of Issues.
 
 ---
 
+template: product-backlog
 name: issue-numbers
 
 ## Issue Numbers
@@ -207,35 +200,38 @@ You will use these numbers:
 
 ---
 
+template: product-backlog
+
 ## Issue Templates
 
 Your use of GitHub's Issues feature must also make use of GitHub Issue Templates:
 
 1. [Download a set of Issue Template Markdown files](https://gist.github.com/bloombar/3ba6ddd69b6364bf20a56d65ad590bd1/archive/a0aa9130ce8d86630669b67d1ec8ddae96e5f379.zip).
-2. Place these example Markdown files into a directory in your repository named `.github`/`ISSUE_TEMPLATE`.
+2. Place these example Markdown files into a directory in your repository named `.github`/`ISSUE_TEMPLATE`/.
 3. Push them to the GitHub central repository.
 4. Now every time you create a new User Story, Task, or Spike, GitHub will offer for you to use one these as a starter template.
 
 ---
 
-class: center, middle
 name: planning-poker
 
 # Planning Poker
 
----
+--
 
 ## Work Estimation
 
 At the start of each Sprint, team members discuss each User Story they are considering including in the new Sprint.
 
-The group quickly assigns each User Story an estimated level of effort using Planning Poker.
+The group quickly assigns each User Story an estimated level of effort using Planning Poker or some other agreed-upon estimation scheme.
 
 ---
 
+template: planning-poker
+
 ## Fibonacci
 
-Every team must print a set of Fibonacci-based planning poker cards for each team member.
+In planning poker, every member of the team must print a set of Fibonacci-based planning poker cards.
 
 - Find a deck you like or design your own.
 - Include a link to your deck on the CONTRIBUTING.md file.
@@ -245,16 +241,15 @@ Every team must print a set of Fibonacci-based planning poker cards for each tea
 
 ---
 
-class: center, middle
 name: sprint-backlogs
 
 # Sprint Backlogs
 
----
+--
 
 ## Selecting User Stories
 
-Those User Stories selected for the current Sprint are added to the Sprint Backlog.
+Those User Stories selected for the current Sprint are added to the [Sprint Backlog](#sprint-backlogs).
 
 In addition to the basic requirements for User Stories in the [Product Backlog](#product-backlog), User Stories in the Sprint Backlog must be assigned:
 
@@ -266,15 +261,18 @@ In addition to the basic requirements for User Stories in the [Product Backlog](
 
 ---
 
+template: sprint-backlogs
 name: tasks
 
 ## Tasks
 
-Each User Story selected for the current Sprint is immediately broken up into Tasks.
+Each User Story selected for [the current Sprint](#sprint-backlogs) is immediately broken up into Tasks.
 
 A `Task` is a unit of work that would ideally take one developer one day.
 
 ---
+
+template: sprint-backlogs
 
 ## Task Requirements
 
@@ -287,6 +285,8 @@ A `Task` is a unit of work that would ideally take one developer one day.
 
 ---
 
+template: sprint-backlogs
+
 ## Spikes
 
 Any work to be done that does not relate directly to a user requirement is documented as a Spike.
@@ -294,6 +294,8 @@ Any work to be done that does not relate directly to a user requirement is docum
 In GitHub, spikes are treated like Tasks in all respects except that they are labeled "spike", not "task".
 
 ---
+
+template: sprint-backlogs
 
 ## Spike Requirements
 
@@ -304,6 +306,8 @@ In GitHub, spikes are treated like Tasks in all respects except that they are la
 ![GitHub issue spikes](../images/github_issues_spikes.png)
 
 ---
+
+template: sprint-backlogs
 
 ## Proper Attribution
 
@@ -316,12 +320,11 @@ For example:
 
 ---
 
-class: center, middle
 name: task-boards
 
 # Task Boards
 
----
+--
 
 ## Concept
 
@@ -337,6 +340,8 @@ Make one Task Board for each Sprint. Call them:
 
 ---
 
+template: task-boards
+
 ## Columns
 
 Each Task Board must have the following columns:
@@ -351,6 +356,8 @@ Each Task Board must have the following columns:
 
 ---
 
+template: task-boards
+
 ## Starting State
 
 At the start of each Sprint, the current Task Board in GitHub must contain:
@@ -359,6 +366,8 @@ At the start of each Sprint, the current Task Board in GitHub must contain:
 - the full list of Tasks and Spikes in the "To Do (Tasks)" column
 
 ---
+
+template: task-boards
 
 ## Changing State
 
@@ -369,6 +378,8 @@ The state of the Task Board must be kept up-to-date at all times.
 
 ---
 
+template: task-boards
+
 ## Missing Work
 
 Your performance evaluation/grade depends upon you accurately listing all work you are doing on the Task Board at all times.
@@ -377,12 +388,11 @@ Your performance evaluation/grade depends upon you accurately listing all work y
 
 ---
 
-class: center, middle
 name: git
 
 # Git
 
----
+--
 
 ## Matching Credentials
 
@@ -395,12 +405,15 @@ git config --global user.email fb1258@nyu.edu
 
 ---
 
+template: git
+
 ## Clone
 
 Each team member must clone their team's remote GitHub repository to their development machine.
 
 ---
 
+template: git
 name: git-branches
 
 ## Branches
@@ -431,6 +444,8 @@ git checkout -b spike/27/learn-react-js
 
 ---
 
+template: git
+
 ## Peer Review
 
 The developer who makes changes must never be the one to merge their own branch into the trunk.
@@ -443,12 +458,11 @@ Both developers are responsible if poor quality code is integrated into the `mas
 
 ---
 
-class: center, middle
 name: daily-standups
 
 # Daily Standups
 
----
+--
 
 ## Concept
 
@@ -459,6 +473,8 @@ Every morning, the entire development team gets together. Everyone quickly and h
 3. Do you have any problems that are blocking your progress?
 
 ---
+
+template: daily-standups
 
 ## Documentation
 
@@ -477,6 +493,8 @@ Include notes for all team members in a single post.
 
 ---
 
+template: daily-standups
+
 ## Honesty
 
 All teams must include in their Team Norms that team members agree to answer the Daily Standup three questions honestly and fully.
@@ -487,7 +505,6 @@ If a team member is doing the same work for several Standups in a row, yet is no
 
 ---
 
-class: center, middle
 name: conclusions
 
 # Conclusions
