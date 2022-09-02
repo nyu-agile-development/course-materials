@@ -33,11 +33,11 @@ permalink: /
 
 An informal short sprint focused on completing a clickable prototype of the application.
 
-| Date | Class | Topics                 | Notes                                                    | Helpful resources | Quiz due                                                      | Scrum tasks due   | Exercise due                                              |
-| :--- | :---- | :--------------------- | :------------------------------------------------------- | :---------------- | :------------------------------------------------------------ | :---------------- | :-------------------------------------------------------- |
-| 9/27 | n/a   | _no class_             |                                                          |                   |                                                               |                   |                                                           |
-| 9/29 | 8     | User experience design | [User experience design](slides/user-experience-design/) |                   |                                                               | Sprint 0 planning | [Full-stack app](https://classroom.github.com/a/ScCEc4ZZ) |
-| 10/4 | 9     | Rapid prototyping      |                                                          |                   | [User experience design](https://forms.gle/fEnVJnV178BcEZTJ9) | Daily standup     |                                                           |
+| Date | Class | Topics                 | Notes                                                                                                        | Helpful resources | Quiz due                                                      | Scrum tasks due   | Exercise due                                              |
+| :--- | :---- | :--------------------- | :----------------------------------------------------------------------------------------------------------- | :---------------- | :------------------------------------------------------------ | :---------------- | :-------------------------------------------------------- |
+| 9/27 | n/a   | _no class_             |                                                                                                              |                   |                                                               |                   |                                                           |
+| 9/29 | 8     | User experience design | - [Project kickoff](slides/project-kickoff/)<br />- [User experience design](slides/user-experience-design/) |                   |                                                               | Sprint 0 planning | [Full-stack app](https://classroom.github.com/a/ScCEc4ZZ) |
+| 10/4 | 9     | Rapid prototyping      |                                                                                                              |                   | [User experience design](https://forms.gle/fEnVJnV178BcEZTJ9) | Daily standup     |                                                           |
 
 ### Sprint 1 - Front-end development
 
