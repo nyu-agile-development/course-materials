@@ -6,6 +6,7 @@ description: >
 copyright: GNU General Public License, Version 3
 layouts_dir: theme/_layouts/
 plugins:
+  - jekyll-feed
   - jekyll-github-metadata
   - jekyll-seo-tag
 defaults:
