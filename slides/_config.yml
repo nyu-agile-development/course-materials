@@ -1,9 +1,0 @@
-github-org-name: nyu-agile-development
-baseurl: /course-materials
-title: Agile Development & DevOps
-description: >
-  Making software following a so-called "agile" approach
-copyright: GNU General Public License, Version 3
-layouts_dir: assets/jekyll/_layouts/
-plugins:
-  - "jekyll-github-metadata"

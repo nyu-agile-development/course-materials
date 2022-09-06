@@ -1,5 +1,4 @@
 ---
-layout: github
 title: Schedule
 permalink: /
 ---

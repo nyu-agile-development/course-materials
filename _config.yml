@@ -5,3 +5,16 @@ description: >
   A fantastic voyage through agile development principles and devops practices
 copyright: GNU General Public License, Version 3
 layouts_dir: assets/jekyll/_layouts/
+plugins:
+  - "jekyll-github-metadata"
+defaults:
+  - scope:
+      path: "content"
+      type: pages
+    values:
+      layout: github
+  - scope:
+      path: "slides"
+      type: pages
+    values:
+      layout: presentation
