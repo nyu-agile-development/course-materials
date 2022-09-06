@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {{ page.title | downcase | strip_html }} | {{ site.github.repository_name
-      }} | {{ site.github.owner_name | downcase | strip_html }}
-    </title>
+
+    {% seo %}
+
     <link
       rel="shortcut icon"
       type="image/x-icon"
