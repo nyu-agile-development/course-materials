@@ -1,3 +1,8 @@
+---
+title: Deployment on Digital Ocean
+permalink: /deployment/basic/
+---
+
 # Set up a CentOS server on DigitalOcean for Node.js deployment
 
 This document outlines one method of setting up a Node.js-ready web server running CentOS, hosted by [DigitalOcean](https://m.do.co/c/4d1066078eb0).

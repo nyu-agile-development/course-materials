@@ -11,18 +11,17 @@ Developing software with an interative agile approach while integrating fundamen
 
 ## Tentative lecture topics
 
-- Computer principles
-- Unix command line
-- HTML
-- CSS
-- HTML & CSS frameworks
-- Design and wireframing
-- Responsive web design
-- Animation
-- Digital image editing
-- Digital audio and video
-- Javascript programming for designers
-- Web hosting and domain names
+- Agile development
+- Version control
+- Web architecture
+- Javascript / ECMAScript
+- Full-stack application development
+- User experience design
+- Rapid prototyping
+- Unit testing
+- Database integration
+- User authentication
+- Deployment
 
 ## Instructor
 
@@ -83,8 +82,9 @@ You will be able to save your work in the ITS labs under your NYU Home Account a
 
 You will receive a grade calculated mechanically on the following rubric.
 
-- Quizzes: 40%
-- Projects: 60%
+- 35%: Quizzes
+- 15%: Individual exercises
+- 50%: Team project
 
 ### Quizzes
 

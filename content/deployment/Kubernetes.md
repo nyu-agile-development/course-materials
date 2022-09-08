@@ -1,3 +1,8 @@
+---
+title: Deployment with Kubernetes on Digital Ocean
+permalink: /deployment/kubernetes/
+---
+
 # Deploying with Kubernetes and Docker on Digital Ocean
 
 ## Terminology
@@ -6,7 +11,7 @@ First a few terms we need to be familiar with. Containers will be placed into po
 
 - **Workload** - an application running on Kubernetes.
 - **Node** - a virtual or physical machine on which the containers will run.
-- **Cluster** - a collection of several nodes.  The **control plane** of a cluster determines which containers are running on the nodes in the cluster, and what resources should be made available to them.
+- **Cluster** - a collection of several nodes. The **control plane** of a cluster determines which containers are running on the nodes in the cluster, and what resources should be made available to them.
 - **Pod** - the smallest deployable units of computing that you can create and manage in Kubernetes. Pods are one or more containers grouped together, with shared storage and network resources. The containers within a pod are run in a shared context.
 
 ## Containerize the app
