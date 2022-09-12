@@ -8,42 +8,39 @@ class: center, middle
 
 # Requirements Engineering
 
-Agile Software Development & DevOps
+A disciplined approach to figuring out what needs to be done.
 
 ---
 
 # Agenda
 
 1. [Overview](#overview)
-2. [Motivations](#motivations)
-3. [Types](#types)
-4. [User Requirements](#user-requirements)
-5. [Elicitation](#elicitation)
-6. [Conclusions](#conclusions)
+1. [Motivations](#motivations)
+1. [Types](#types)
+1. [User Requirements](#user-requirements)
+1. [Business Requirements](#business-requirements)
+1. [Compliance Requirements](#compliance-requirements)
+1. [Security Requirements](#security-requirements)
+1. [Requirements Elicitation](#elicitation)
+1. [Conclusions](#conclusions)
 
 ---
 
-class: center, middle
 name: overview
 
 # Overview
 
----
-
-# Overview
+--
 
 Requirements engineering is the disciplined process of defining what a project requires to be done and how it must be done.
 
 ---
 
-class: center, middle
 name: motivations
 
 # Motivations
 
----
-
-# Motivations
+--
 
 Requirements provide several benefits to a project:
 
@@ -54,14 +51,11 @@ Requirements provide several benefits to a project:
 
 ---
 
-class: center, middle
 name: types
 
 # Types
 
----
-
-# Types
+--
 
 There are two top-level categories of requirements:
 
@@ -70,7 +64,7 @@ There are two top-level categories of requirements:
 
 ---
 
-# Types
+template: types
 
 ## Functional requirements
 
@@ -82,30 +76,27 @@ Functional requirements describe what the system must do, in layman's terms, inc
 
 ---
 
-# Types
+template: types
 
 ## Non-functional requirements
 
 Non-functional requirements specify constraints on either the system or the development process, including:
 
-- Timing constraints
-- Constraints on the development process
-- Constraints on technologies that must or must not be used
-- Standards that must be followed by the project
-- Performance - e.g. speed, size, memory, uptime, reliability, load handling, portability
+- Business requirements, i.e. what must the project achieve when successful in order to improve the business and when must it be done
+- Compliance requirements: standards or government regulations that must be complied with
+- Platform requirements: constraints on platforms or technologies that must be used
+- Performance requirements: e.g. speed, size, memory, uptime, reliability, load handling, portability
+- Security requirements: what security measures and practices must be integrated into the software to protect sensitive data and systems.
 
 ---
 
-class: center, middle
 name: user-requirements
 
 # User Requirements
 
----
+--
 
-# User Requirements
-
-A type of functional requirement focused on the user experience.
+The main variety of functional requirement, focused on the user experience.
 
 Define what a user must be able to do with the system, written in layman's terms.
 
@@ -116,7 +107,7 @@ There are two popular ways of writing user requirements:
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## Use Cases
 
@@ -126,7 +117,7 @@ A list of actions and events involved in a specific user interaction.
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## Use Cases
 
@@ -138,7 +129,7 @@ At a minimum contains:
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## Use Cases
 
@@ -152,7 +143,7 @@ Example:
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## Use Cases
 
@@ -162,7 +153,7 @@ Written use cases often are accompanied by a Unified Modeling Diagram Language (
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## User Stories
 
@@ -176,26 +167,30 @@ As a **, I want **, so I can \_\_.
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## User Stories
 
-Each User Story also includes:
+Each User Story also may include:
 
 - Estimated level of effort
 - Acceptance criteria
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## User Stories
 
 Example:
 
 > As a customer, I want to sign up so I can start placing orders.
->
-> Effort: M
+
+--
+
+This may have the following additional notes attached:
+
+> Estimation of effort: M
 >
 > Acceptance criteria:
 >
@@ -208,7 +203,7 @@ Example:
 
 ---
 
-# User Requirements
+template: user-requirements
 
 ## Use Cases vs. User Stories
 
@@ -216,24 +211,111 @@ Example:
 
 ---
 
-class: center, middle
+name: business-requirements
+
+# Business Requirements
+
+--
+
+## Overview
+
+An organization engages in a development project for a reason.  Business requirements documents document this reason and any other business constraints.  This may include:
+
+- project objectives 
+  - i.e. how success is defined: e.g. increased income, customer base, customer satisfaction, publicity, etc.
+- the scope of the project
+  - what will be done
+  - initial timeline
+  - initial resource plan
+- business requirements:
+  - time constraints
+  - budget constraints
+  - any other resource constraints
+
+... and so on ...
+
+---
+
+name: compliance-requirements
+
+# Compliance Requirements
+
+--
+
+## Overview
+
+Software used in certain industries or certain purposes must abide by government regulation or industry standards, e.g.
+
+Government regulations:
+- [Health Insurance Portability and Accountability Act](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act) (HIPPA)
+- [Children's Online Privacy Protection Act](https://en.wikipedia.org/wiki/Children's_Online_Privacy_Protection_Act) (COPPA)
+- [Family Educational Right to Privacy Act](https://en.wikipedia.org/wiki/Family_Educational_Rights_and_Privacy_Act) (FERPA)
+- [USA Patriot Act](https://en.wikipedia.org/wiki/Patriot_Act) (includes Know Your Customer requirement for financial institutions)
+- [Federal Information Security Management Act](https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002) (FISMA)
+- [Sarbanes-Oxley Act](https://en.wikipedia.org/wiki/Sarbanes%E2%80%93Oxley_Act) (SOX)
+- [Gramm-Leach-Biley Act](https://en.wikipedia.org/wiki/Gramm%E2%80%93Leach%E2%80%93Bliley_Act) (GLBA)
+- [New York State Information Security Breach and Notification Act](https://ag.ny.gov/new-york-state-information-security-breach-and-notification-act)
+- [Federal Financial Institutions Examination Council](https://en.wikipedia.org/wiki/Federal_Financial_Institutions_Examination_Council) (FFIEC)
+- [EU General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+
+... and so on ...
+
+---
+
+name: security-requirements
+
+# Security Requirements
+
+--
+
+## Overview
+
+Focused on three P's: 
+
+--
+
+- **P**roduct:  e.g. software defects/bugs, poor data handling, faulty configuration settings, use of insecure 3rd-party platforms or tools, 
+
+--
+
+- **P**eople: e.g. social engineering attacks, human error
+
+--
+
+- **P**rocess: e.g. lack of integration of security concerns throughout process, inadequate maintenance
+
+---
+
 name: elicitation
 
 # Elicitation
 
----
+--
 
-# Elicitation
+## Techniques
 
-How do you gather requirements?
+How do you determine the requirements of a project?
 
 - Interviews
 - Observatiion
-- Intuition
+- Intuition & brainstorming
 
 ---
 
-# Elicitation
+template: elicitation
+
+## Midwifery
+
+Why do we say we "elicit" requirements?
+
+- engage key stakeholders in an ongoing dialog
+- give them the opportunity and space to formulate and evolve their thoughts
+- progressively elaborate on their ideas until a clear picture of the project emerges in their minds and yours
+- engage them as collaborative partners in the process
+
+---
+
+template: elicitation
 
 ## Interviews
 
@@ -244,9 +326,9 @@ It would typically be a mistake not to interview:
 
 ---
 
-# Elicitation
+template: elicitation
 
-## Interviews
+## Interviews (continued)
 
 An interview can either be conducted in an _open_ or _closed_ manner.
 
@@ -255,7 +337,24 @@ An interview can either be conducted in an _open_ or _closed_ manner.
 
 ---
 
-# Elicitation
+template: elicitation
+
+## Interviews (continued again)
+
+Start broad:
+- What problem does this product solve from a business perspective?  
+- What opportunity does it take advantage of?
+
+Go deeper:
+- Who the users are and what their goals and challenges might be interacting the product.
+- For each type of user, what specific functionality do they need to achieve each of those goals.
+
+Very detailed:
+- establish any and all remaining thoughts of what the user needs and how the system must work technically.
+
+---
+
+template: elicitation
 
 ## Observation
 
@@ -267,9 +366,10 @@ Observing end-users achieving their goals without your system, such as with...
 
 ---
 
-# Elicitation
 
-## Observation
+template: elicitation
+
+## Observation (again)
 
 Similarly to interviews, observation can either be active or passive.
 
@@ -278,15 +378,17 @@ Similarly to interviews, observation can either be active or passive.
 
 ---
 
-# Elicitation
+template: elicitation
 
-## Intuition
+## Intuition & brainstorming
 
 Realistically, a requirements engineer (who may also be a software engineer) already has preeconceived notions of what users might want to do with the system based on their experience.
 
+- Running brainstorming workshops where the requirements engineer asks a group of stakeholders about certain requirements that the engineer has already intuited can help build agreement on a pre-conceived plan.
+
 ---
 
-class: center, middle
+
 name: conclusions
 
 # Conclusions
