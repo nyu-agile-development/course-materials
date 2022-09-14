@@ -476,11 +476,12 @@ template: merge
 - A typical workflow:
 
 ```bash
-git pull origin # get latest code in all branches from the remote origin server
+git pull origin main # get latest code for the current branch from the remote origin repository
 
-git checkout some-branch-name # switch to a branch where you will make changes in isolation... either first create this branch with 'git branch some-branch-name' or do 'git checkout -b some-branch-name' to create it and check it out at once
+git checkout some-branch-name # switch to a branch where you will make changes in isolation... either first create this branch with `git branch some-branch-name` or do `git checkout -b some-branch-name` to create it and check it out at once
 
 # make some chages to the code in this branch, if desired using your preferred editor
+# stage and commit your changes, i.e. `git add .`, `git commit -m "some message."`
 
 git checkout main # switch back to the main branch to prepare to merge
 
@@ -489,6 +490,9 @@ git pull origin main # download any recent changes from the origin server
 git merge some-branch-name # incorporaate your changes in the branch into the code in the main branch
 
 git branch -d some-branch-name # delete the branch now that we're done with it
+
+git push origin main # upload your changes to the remote origin repository
+
 ```
 
 ---
@@ -591,17 +595,16 @@ Push the code in the current branch from the local repository to the branch name
 
 ```bash
 git pull
-git push -u origin main
+git push origin main
 ```
 
---
-
-Or, if you are already in the 'main' branch and the remote named 'origin' has already been defined:
+Optionally, you can set `origin` as the default place to push by running this command once:
 
 ```bash
-git pull
-git push
+git push --set-upstream origin main
 ```
+
+From then on, you can use just `git push` to push changes to `origin`.
 
 ---
 
