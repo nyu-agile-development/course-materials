@@ -8,97 +8,15 @@
     {% seo %}
 
     <link
+      rel="stylesheet"
+      href="{{ site.baseurl | strip_html }}/theme/css/presentation.css"
+    />
+
+    <link
       rel="shortcut icon"
       type="image/x-icon"
       href="{{ site.baseurl | strip_html }}/theme/favicon.ico"
     />
-    <style>
-      @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      /* color palette from https://www.colourlovers.com/palette/361545/garden_picnic */
-
-      body {
-        font-family: "Droid Serif";
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-family: "Yanone Kaffeesatz";
-        font-weight: normal;
-      }
-
-      h1,
-      p {
-        color: white;
-      }
-      h2 {
-        color: #c5645e;
-      }
-
-      a,
-      blockquote,
-      strong,
-      em {
-        color: #fadf68;
-      }
-
-      blockquote {
-        /* vertical line on the left of quotes */
-        margin-left: 0px;
-        padding-left: 36px;
-        border-left: 4px solid #c5645e;
-        font-family: "Yanone Kaffeesatz";
-        font-size: 1.25em;
-      }
-
-      code {
-        background: #272822;
-        border-radius: 5px;
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      .remark-container {
-        background-color: black; /* #540F0E; */
-      }
-
-      .remark-slide-content {
-        background-color: black; /* #1E270D; */
-        color: white;
-      }
-
-      .remark-slide-scaler {
-        -webkit-box-shadow: 0 0 30px #646f32;
-        box-shadow: 0 0 30px #646f32;
-      }
-
-      .remark-code,
-      .remark-inline-code {
-        font-family: "Ubuntu Mono";
-      }
-      .remark-inline-code {
-        padding-left: 10px;
-        padding-right: 10px;
-        color: #fadf68;
-      }
-
-      /* CUSTOM STYLES FOR BREADCRUMB */
-      header.slides {
-        color: #505050;
-        position: fixed;
-        left: 20px;
-        top: 20px;
-      }
-      header.slides a {
-        color: #505050;
-        text-decoration: none;
-      }
-    </style>
   </head>
   <body>
     <header class="slides">
@@ -120,7 +38,7 @@
     ></script>
     <script type="text/javascript">
       var slideshow = remark.create({
-        navigation: { scroll: true },
+        navigation: { scroll: false },
         highlightStyle: "monokai",
         countIncrementalSlides: false,
       })
