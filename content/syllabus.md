@@ -7,7 +7,7 @@ permalink: /syllabus/
 
 ## Course description
 
-Developing software with an interative agile approach while integrating fundamental devops and automation practices.
+Developing software with an iterative agile approach while integrating fundamental devops and automation practices. Students work for almost the entire semester in a single team building a single application for mobile devices.
 
 ## Tentative lecture topics
 
@@ -15,7 +15,8 @@ Developing software with an interative agile approach while integrating fundamen
 - Version control
 - Web architecture
 - Javascript / ECMAScript
-- Full-stack application development
+- Mobile web application design
+- Full-stack development
 - User experience design
 - Rapid prototyping
 - Unit testing
@@ -94,9 +95,9 @@ Quizzes are submitted by submitting a Google Form.
 
 ### Projects
 
-Projects are primarily done with a group and are mostly completed outside of class.
+The main project is to design and build a mobile web application using an industry-standard Javascript-based technology stack. While some class sessions are dedicated to working on projects, the majority of the development time will occur outside of class.
 
-All projects are submitted by pushing code to GitHub.
+Projects are submitted by pushing code to GitHub.
 
 - we will cover how to push code to GitHub
 - unless you have good reason to do otherwise, follow best-practices for all [basic file names and file extensions](https://knowledge.kitchen/Basic_computer_concepts#File_names)
