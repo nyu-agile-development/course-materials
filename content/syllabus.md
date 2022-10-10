@@ -7,7 +7,7 @@ permalink: /syllabus/
 
 ## Course description
 
-Developing software with an iterative agile approach while integrating fundamental devops and automation practices. Students work for almost the entire semester in a single team building a single application for mobile devices.
+Developing software with an iterative agile approach while integrating fundamental devops and automation practices. Students work for almost the entire semester in a single team specifying and building a single application of their own design for mobile devices.
 
 ## Tentative lecture topics
 
