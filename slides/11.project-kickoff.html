@@ -61,7 +61,7 @@ template: ready-set-go
 - Teams [divide labor](#labor) fairly and wisely.
 - Teams communicate primarily in-person and through [Discord](#discord).
 - Teams use [GitHub](#github) as both a central code repository and a project management tool.
-- The [Product Backlog](#product-backlog) represents the full list of user requirements of the project.  It gets updated regularly.
+- The [Product Backlog](#product-backlog) represents the full list of user requirements of the project. It gets updated regularly.
 - Teams estimate work using [Planning Poker](#planning-poker) cards.
 - A [Sprint Backlog](#sprint-backlogs) shows which user requirements are being worked on during the current Sprint.
 - A [Task Board](#task-boards) shows the up-to-date status of all work at all times.
@@ -160,7 +160,7 @@ name: product-backlog
 
 ## User Stories
 
-Before work on a project can begin, it must have an initial *Product Backlog* - a set of user requirements for the project written in User Story form.
+Before work on a project can begin, it must have an initial _Product Backlog_ - a set of user requirements for the project written in User Story form.
 
 ---
 
@@ -328,15 +328,14 @@ name: task-boards
 
 ## Concept
 
-Each GitHub repository has a `Projects` tab, where Task Boards can be made.
+Each GitHub repository has a `Projects` tab, where Task Boards can be linked.
 
-Make one Task Board for each Sprint. Call them:
+Make one Task Board for each Sprint. If your team were named `Octapus`, name your task boards:
 
-- Sprint 0 Task Board
-- Sprint 1 Task Board
-- Sprint 2 Task Board
-- Sprint 3 Task Board
-- Sprint 4 Task Board
+- Team Octapus - Sprint 1
+- Team Octapus - Sprint 2
+- Team Octapus - Sprint 3
+- Team Octapus - Sprint 4
 
 ---
 
@@ -422,7 +421,7 @@ Requirements:
 
 - Make all changes to the code in isolated branches.
 - Create a new branch for every Task or Spike under development.
-- Never work directly in the `master` branch.
+- Never work directly in the `main` branch.
 - Name branches after the User Story and Task/Spike which they are intended to implement, including:
   -- the user story issue number (if any)
   -- the task or spike issue number
@@ -450,11 +449,11 @@ template: git
 
 The developer who makes changes must never be the one to merge their own branch into the trunk.
 
-1. The developer making changes must push their completed branch to GitHub and then issue a Pull request to the `master` branch
+1. The developer making changes must push their completed branch to GitHub and then issue a Pull request to the `main` branch
 2. The same developer must, of course, update the position of the relevant Task that this branch implements on the Task Board.
-3. A second developer must review the changes in the pull request, approve them if good, and merge them into `master`.
+3. A second developer must review the changes in the pull request, approve them if good, and merge them into `main`.
 
-Both developers are responsible if poor quality code is integrated into the `master` branch.
+Both developers are responsible if poor quality code is integrated into the `main` branch.
 
 ---
 
@@ -499,7 +498,7 @@ template: daily-standups
 
 All teams must include in their Team Norms that team members agree to answer the Daily Standup three questions honestly and fully.
 
-It is in all team members' interests to report blocking problems or underperforming team members to the stakeholders immediately.
+It is in all team members' interests to report blocking problems or underperforming team members to their "managers" immediately.
 
 If a team member is doing the same work for several Standups in a row, yet is not reporting any blocking problems, this is a sign of a _big_ problem for the entire team.
 
