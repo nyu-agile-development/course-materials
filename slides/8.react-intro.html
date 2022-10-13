@@ -1182,7 +1182,7 @@ name: links-1
 As with its HTML `a` element equivalent, the JSX `a` component provides the simplest a way to link from one screen to another.
 
 ```html
-<a href="/puppies-for-sale">Click me!</a>
+<a href="/puppies/2">Click me!</a>
 ```
 
 As with all JSX attributes, Javascript variables or expressions can be injected as the link's `href` attribute value if desired:
@@ -1191,10 +1191,13 @@ As with all JSX attributes, Javascript variables or expressions can be injected 
 <a href={`/puppies/${puppyId}`}>Click me!</a>
 ```
 
+Note that while using an `a` component to create a link will work, it is not the most efficient way to do so. It will cause the browser to reload an entirely new page, which is not necessary in most cases.
+- We will look at using the [Link](#react-router-dom-link) component from the [react-router-dom](#react-router-dom) module as a preferable way to create links in a moment
+
 ---
 
 template: links
-name: links-2
+name: react-router-dom
 
 ## The react-router-dom module
 
@@ -1220,7 +1223,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom" // as 
 ---
 
 template: links
-name: links-2a
+name: react-router-dom-router
 
 ## The react-router-dom module (continued)
 
@@ -1239,6 +1242,29 @@ For example, the following sets up a few mutually-exclusive front-end **routes**
 
   <Footer />
 </Router>
+```
+
+Setting up these route paths is typically done in the top-level component, often called `App.js`. 
+
+---
+
+template: links
+name: react-router-dom-link
+
+## The react-router-dom module (continued again)
+
+The `react-router-dom` module also includes a `Link` component that can be used to link from one component to another.  This is the prefered way to create links from one screen to another when using React.
+
+First, import the `Link` component:
+
+```javascript
+import { Link } from "react-router-dom"
+```
+
+Then use it in a JSX component to link to another component:
+
+```jsx
+<Link to="/animals">See all animals</Link>
 ```
 
 ---
