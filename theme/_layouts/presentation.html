@@ -20,6 +20,7 @@
   </head>
   <body>
     <header class="slides">
+      <!-- breadcrumb -->
       <small>
         <a href="https://github.com/{{ site.github.owner_name }}">
           {{ site.github.owner_name | downcase | strip_html }}
@@ -29,9 +30,23 @@
           <!-- {{ site.github-org-name }} -->
           {{ site.github.repository_name | strip_html }}
         </a>
+        /
+        <a href="{{ site.baseurl | strip_html }}{{ page.url }}">
+          {{ page.title | downcase | strip_html }}
+        </a>
       </small>
+      <!-- // breadcrumb -->
     </header>
     <textarea id="source">{{ page.content }}</textarea>
+    <footer>
+      <small>
+        <a
+          class="source"
+          href="https://github.com/{{ site.github-org-name }}{{ site.baseurl }}/blob/master/{{ page.path | strip_html }}"
+          >view source</a
+        >.
+      </small>
+    </footer>
     <script
       src="{{ site.baseurl | strip_html }}/theme/js/remark.js"
       type="text/javascript"
