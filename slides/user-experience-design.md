@@ -132,13 +132,18 @@ As with **requirements gathering** more generally, User Experience Design discov
 
 - **Demographic research** - review market research to understand the typical desires, problems, and needs of the average person in the demographic(s) you are targeting.
 
---
+---
+
+template: discovery
+
+## Method (continued)
 
 ... and anything else they can get their hands on ...
 
 - review of an existing iteration of a given product or service
 - review of any internal documenation of the product or service
 - review of any analytics of the performance or success of the product or service
+- any rumors or anecdotes that might give insights into the business goals or user's needs
 
 ---
 
