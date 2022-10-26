@@ -16,6 +16,7 @@ An organized approach to versioning software releases.
 
 1. [Overview](#overview)
 1. [Semantic Versioning](#semantic-versioning)
+1. [Calendar Versioning](#calendar-versioning)
 1. [Git Tags](#git-tags)
 1. [GitHub Releases](#github)
 1. [Conclusions](#conclusions)
