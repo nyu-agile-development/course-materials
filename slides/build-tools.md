@@ -15,11 +15,15 @@ System building in preparation for execution.
 # Agenda
 
 1. [Overview](#overview)
-2. [Common Features of Build Tools](#features)
-3. [Stages](#stages)
-4. [Continuous Integration](#continuous-integration)
-5. [Popular Build Tools](#popular-build-tools)
-6. [Conclusions](#conclusions)
+1. [Common Features of Build Tools](#features)
+1. [Stages](#stages)
+1. [Continuous Integration](#continuous-integration)
+1. [The Original Build Tool](#original-build-tools)
+1. [Java Build Tools](#java-build-tools)
+1. ... [Intermission](#package-managers) ...
+1. [JavaScript Build Tools](#javascript-build-tools)
+1. [Python Build Tools](#python-build-tools)
+1. [Conclusions](#conclusions)
 
 ---
 
@@ -183,9 +187,9 @@ Agile methodology promotes the practice of very frequent automated builds and au
 
 ---
 
-name: popular-build-tools
+name: original-build-tools
 
-# Popular Build Tools
+# The Original Build Tool
 
 --
 
@@ -203,7 +207,7 @@ Make, included in UNIX starting in 1976, and the many automation tools derived f
 
 ---
 
-template: popular-build-tools
+template: original-build-tools
 name: makefiles
 
 ## Make (continued)
@@ -232,15 +236,18 @@ Key features:
 
 ---
 
-template: popular-build-tools
+template: original-build-tools
 
 ## Make (continued again)
 
-See [an example](https://knowledge.kitchen/Popular_system_build_tools#Example) of a simple Makefile.
+See...
+
+- [an example](../files/build-tools/makefile-example1.txt) of a simple `Makefile`.
+- [a slightly more advanced example](../files/build-tools/makefile-example2.txt) that achieves the same build but removes some redundancy.
 
 ---
 
-template: popular-build-tools
+template: original-build-tools
 
 ## Make (continued once more)
 
@@ -266,7 +273,11 @@ Make has a few limitations that have led to the development of later build syste
 
 ---
 
-template: popular-build-tools
+name: java-build-tools
+
+# Java Build Tools
+
+--
 
 ## Ant
 
@@ -274,7 +285,7 @@ Apache Ant, begun in 2000, is a popular automated build tool that was designed e
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Ant (continued)
 
@@ -304,15 +315,15 @@ Key features:
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Ant (continued again)
 
-See [an example](https://knowledge.kitchen/Popular_system_build_tools#Example_2) of an Ant `build.xml` file.
+See [an example](../files/build-tools/ant-example1.txt) of an Ant `build.xml` file.
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Ant (again once more)
 
@@ -332,7 +343,7 @@ Ant has suffered criticism on a few fronts:
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Maven
 
@@ -340,7 +351,7 @@ Apache Maven is a successor to Apache Ant, initially released in 2004, that aims
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Maven (continued)
 
@@ -372,19 +383,19 @@ Key features:
 
 --
 
-- maintains a repository of plug-ins for easy discovery and installation
+- maintains a repository of plug-ins for easy discovery and a _package manager_ to handle installing them
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Maven (continued again)
 
-See [an example](https://knowledge.kitchen/Popular_system_build_tools#Examples) of a Maven pom.xml build file.
+See [an example](../files/build-tools/maven-example1.txt) of a Maven `pom.xml` build file.
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Maven (continued again once more)
 
@@ -404,7 +415,7 @@ Like build systems before it, Maven has its critics.
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Gradle
 
@@ -412,7 +423,7 @@ Gradle is [yet another] open source build automation tool primarily focused on J
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Gradle
 
@@ -436,93 +447,149 @@ Key features:
 
 ---
 
-template: popular-build-tools
+template: java-build-tools
 
 ## Gradle (continued again)
 
-See [an example](https://knowledge.kitchen/Popular_system_build_tools#Example_3) of a Maven build.gradle file.
+See [an example](../files/build-tools/gradle-example1.txt) of a Gradle `build.gradle` file.
 
 ---
 
-template: popular-build-tools
+name: package-management
 
-## Grunt & Gulp
+# Intermission
 
-[Grunt](https://gruntjs.com/) and [Gulp](https://gulpjs.com/) a Javascript-specific **task runners** - tools for general-purpose automation of repetitive build-related tasks, including:
+--
 
-- minification of code
-- compilation
-- unit testing
-- code linting
-- etc.
+## Package managers
+
+A "_package_" is software that has been designed to be easily distributed via a "[package manager](https://en.wikipedia.org/wiki/Package_manager)" (sometimes called a _dependency manager_) so that others can easily download, install, configure, and use the package in their own applications.
+
+- Java has two popular package managers: [Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/).
+- Javascript's default package manager is [npm](https://www.npmjs.com/).
+- Python's default package manager is [pip](https://pypi.org/project/pip/)
+- Swift's default package manager is the [Swift Package Manager](https://swift.org/package-manager/)
+- ... etc.
+
+Package managers thus maintain repositories of packages and provide the tools to install and configure those packages.
 
 ---
 
-template: popular-build-tools
+template: package-management
 
-## Grunt
+## Now on with the show
 
-Key features:
-
---
-
-- open source
-
---
-
-- build scripts written in Javascript in a file named `Gruntfile`, in homage to [Makefiles](#makefiles).
-
---
-
-- attempts to bring the joy of Ant/Maven/Gradle-style automated builds specifically into the world of Javascript projects.
+As we'll see, the Javascript and Python build tools ecosystems center heavily on package managers.
 
 ---
 
-template: popular-build-tools
+name: javascript-build-tools
 
-## Grunt (continued again)
+# JavaScript Build Tools
 
-See [an example](https://knowledge.kitchen/Popular_system_build_tools#Example_4) of a Gruntfile.
+--
+
+## Overview
+
+JavaScript has one of the most sophisticated and rapidly evolving tooling environment of any language. Some popular build-related tools include:
+
+- `npm` and `yarn` - package managers
+- `webpack` and `parcel` - bundlers
 
 ---
 
-template: popular-build-tools
+template: javascript-build-tools
 
-## NPM
+## Package managers
 
-In many ways, Node Package Manager (NPM) itself can be considered a build tool.
+[npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/en/) are package managers for Javascript that have build-related capabilities.
 
----
-
-template: popular-build-tools
-
-## NPM (continued)
-
-NPM includes:
-
---
-
-- tracking dependencies (in the package.json file)
-
---
-
-- automated builds (by running `npm install`)
-
---
-
-- integration with unit testing (by adding a `test` script to package.json)
-
---
-
-- allows any arbitrary script to be run (by adding scripts to package.json)
+- `npm` is the default package manager for Node.js
+- `yarn` is a newer package manager that aims to be faster and more secure than `npm`
+- document, install, and manage dependencies and configuration settings in a `package.json` file
+- installing a project's dependencies is as simple as running `npm install`
+- can also include arbitrary scripts that can be run with `npm run <script-name>` or `yarn run <script-name>`
+- startup script is usually called with a simple `npm start` or `yarn start`
+- test scripts are usually run with a simple `npm test` or `yarn test`
+- see [example of a package.json](../files/build-tools/npm-example1.txt) file
 
 ---
 
-template: popular-build-tools
+template: javascript-build-tools
 
-## NPM (continued again)
+## Webpack and parcel
 
-NPM package.json files are so pervasive in app development today that they need no example here.
+[webpack](https://webpack.js.org/) and [parcel](https://parceljs.org/) are bundlers for Javascript.
+
+- traditionally take a bunch of separate Javascript files and bundle them into a single file.
+- can also be used as a task runner to trigger other actions like minification, transpilation, etc.
+- include "hot reloading" which means that whenever you save a file, a new build will be triggered automatically
+- `webpack` is the more common bundler in use today, but configuring it is complex
+- `parcel` markets itself as "zero-configuration" competitor
+
+---
+
+name: python-build-tools
+
+# Python Build Tools
+
+--
+
+## Overview
+
+The Python build tool ecosystem has historically been less developed, but has recently taken inspiration from Java and JavaScript. Some popular tools:
+
+- `pip` - package manager
+- `venv` - virtual environments
+- `conda` - package manager and virtual environments!
+- `pipenv` - modular reproducible sharable virtual environments
+- `distutils` and `setuptools` - build tools for creating packages
+
+---
+
+template: python-build-tools
+
+## Package managers and virtual environments
+
+[pip](https://pip.pypa.io/en/stable/) is the default package managers for Python. `pip` is used to document, install, and manage dependencies in most Python projects
+
+- packages in `pip` are stored in the [Python Package Index](https://pypi.org/) (PyPI) - a repository of Python packages
+- [venv](https://docs.python.org/3/library/venv.html) - allows dependencies to be installed modularly in a project-specific "virtual environment"
+- [pipenv](https://packaging.python.org/en/latest/tutorials/managing-dependencies/) - makes it easier to manage virtual environments in a portable, easily-shareable way
+
+--
+
+[conda](https://conda.io/docs/) is a competitor package manager like `pip` that also manages virtual environments like `venv` and `pipenv`. It is part of the popular [Anaconda](https://www.anaconda.com/) data science toolkit.
+
+---
+
+template: python-build-tools
+
+## Distutils and setuptools
+
+When it comes to creating packages so that software is easily distributed from the `PyPI` via `pip` or `conda`, Python has two main tools:
+
+- [distutils](https://docs.python.org/3/library/distutils.html) - the default module for creating packages for distribution via a package manager
+- [setuptools](https://setuptools.readthedocs.io/en/latest/) - a higher-level tool that builds on top of `distutils` and provides additional functionality
+
+--
+
+In practice, one need only use `setuptools` directly, as this provides a high-level interface to the functionality of `distools`.
+
+--
+
+[twine](https://pypi.org/project/twine/) is a tool for publishing packages to the PyPI repository so others can access, install, and use them.
+
+---
+
+template: python-build-tools
+
+## Python's build ecosystem (continued)
+
+Python builds result in packages consisting of two artifacts:
+
+- **sdist** - a compressed archive of the source code that can be used to build the software on an end-users machine
+- **wheel** - the [pre-built distribution package](https://packaging.python.org/en/latest/glossary/#term-Built-Distribution) that can be installed directly without requiring the end-user to build the software
 
 ---
 

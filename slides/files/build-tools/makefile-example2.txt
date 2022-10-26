@@ -1,0 +1,33 @@
+
+#
+# Here is an example Makefile using more advanced syntax features of Makefiles to remove redundancy
+#
+
+JCC = javac
+JFLAGS = -g
+
+# Make includes a built-in set of common compiled targets and their source code file dependencies (e.g. .o files depend upon .c files in C, or .class files depend upon .java files for Java)
+# This command clears any such defaults so we can explicitly define how to build .class files from .java files
+.SUFFIXES: .java .class
+
+# a macro defining how to build .class targets from .java files.
+# $* is a macro that is replaced with the basename of whichever target is being built from this macro
+.java.class:
+        $(JCC) $(JFLAGS) $*.java
+
+# a macro containing 4 items (one for each source code file to be built)
+CLASSES = \
+        Average.java \
+        Convert.java \
+        Volume.java
+
+# the default target that depends upon the classes target
+default: classes
+
+# the target that 'does the work' in this file.
+# it includes a macro that takes each of the items from the CLASSES macro and replaces its .java extension with a .classes extension using the .java.class macro defined above.
+classes: $(CLASSES:.java=.class)
+
+clean:
+        $(RM) *.class
+

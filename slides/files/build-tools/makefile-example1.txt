@@ -1,0 +1,43 @@
+
+#
+# The following Makefile example includes instructions for how to compile three Java byte code class files, including:
+#
+# - definitions - some variables that contain useful definitions of commands and options to be run
+# - rules - instructions for how to perform the builds of each target
+# - cleanup - removing artifacts of the build so the next build starts from a clean slate
+#
+
+# a variable that defines the java compiler command to use
+JCC = javac
+
+# a variable that refers to compilation flags to be sent to the compiler
+# the -g flag compiles with debugging information
+JFLAGS = -g
+
+# typing 'make' with no options from the command-line will, by default, invoke the first rule in the Makefile, here called 'default'.
+# this rule defines the target, 'default', and the other targets upon which it depends
+# this rule does not include any commands necessary to build the default target, only the other targets upon which this target depends in order to be complete
+default: Average.class Convert.class Volume.class
+
+# this rules defines the target named 'Average.class', which you'll notice is one of the dependencies of the 'default' target
+# the Average.class target is dependent on the Average.java source code file
+# this rule includes indendented commands below it, which outline the command-line operations to be performed to build this target
+# by substituting the variables with their values, this command would look like 'javac -g Average.java'
+Average.class: Average.java
+        $(JCC) $(JFLAGS) Average.java
+
+# this rule follows the same pattern as the previous rule
+Convert.class: Convert.java
+        $(JCC) $(JFLAGS) Convert.java
+
+# this rule follows the same pattern as the previous rule
+Volume.class: Volume.java
+        $(JCC) $(JFLAGS) Volume.java
+
+# the following rule is not invoked in a default build, since it is not required by the default rule
+# in order to invoke the following rule, the command 'make clean' must be run from the command-line.
+# this rule removes all .class files, so that the next make rebuilds them from scratch
+# note that our code has not defined the RM variable, since Make already includes it in its pre-defined variable set, although you could define the variable manually if desired
+clean:
+        $(RM) *.class
+
