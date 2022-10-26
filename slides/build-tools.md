@@ -571,10 +571,11 @@ When it comes to creating packages so that software is easily distributed from t
 
 - [distutils](https://docs.python.org/3/library/distutils.html) - the default module for creating packages for distribution via a package manager
 - [setuptools](https://setuptools.readthedocs.io/en/latest/) - a higher-level tool that builds on top of `distutils` and provides additional functionality
+- [build](https://pypa-build.readthedocs.io/en/stable/differences.html#setup-py-sdist-bdist-wheel) - an even higher-level build tool that works with projects designed for use with `setuptools` as well as other build systems.
 
 --
 
-In practice, one need only use `setuptools` directly, as this provides a high-level interface to the functionality of `distools`.
+In practice, one need only use `build` directly, as this provides a high-level interface to the functionality of `setuptools` and `distools` - see [discussion](https://stackoverflow.com/questions/68545064/python-commands-to-build-distribution-setup-py-build-vs-python-m-build) on this point.
 
 --
 
