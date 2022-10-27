@@ -553,7 +553,7 @@ template: python-build-tools
 
 [pip](https://pip.pypa.io/en/stable/) is the default package managers for Python. `pip` is used to document, install, and manage dependencies in most Python projects
 
-- packages in `pip` are stored in the [Python Package Index](https://pypi.org/) (PyPI) - a repository of Python packages
+- packages in `pip` are stored in the [Python Package Index](https://pypi.org/) (PyPI, a.k.a "[Cheeseshop](https://wiki.python.org/moin/CheeseShop)") - a repository of Python packages
 - [venv](https://docs.python.org/3/library/venv.html) - allows dependencies to be installed modularly in a project-specific "virtual environment"
 - [pipenv](https://packaging.python.org/en/latest/tutorials/managing-dependencies/) - makes it easier to manage virtual environments in a portable, easily-shareable way
 
@@ -590,7 +590,7 @@ template: python-build-tools
 Python builds result in packages consisting of two artifacts:
 
 - **sdist** - a compressed archive of the source code that can be used to build the software on an end-users machine
-- **wheel** - the [pre-built distribution package](https://packaging.python.org/en/latest/glossary/#term-Built-Distribution) that can be installed directly without requiring the end-user to build the software
+- **wheel** - the [pre-built distribution package](https://packaging.python.org/en/latest/glossary/#term-Built-Distribution) (a.k.a. "eggs") that can be installed directly without requiring the end-user to build the software
 
 ---
 
