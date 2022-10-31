@@ -194,6 +194,10 @@ describe("Array", function () {
 })
 ```
 
+--
+
+If the project's `package.json` file is set up with a script called `test` that contains the command to execute the tests using, then the tests can be run from the same directory as the `package.json` file with `npm test`.
+
 ---
 
 template: examples
@@ -246,6 +250,37 @@ class Tests:
 
 ```
 
+--
+
+Note that `pytest` works best when all test files are in a `tests` directory with filenames that start with `test_` and all test functions start with `test_`.
+
+- just run the command `python3 -m pytest` from the main project directory to run all tests.
+
+---
+
+template: examples
+
+## Python (continued)
+
+A unit test example of a back-end route using the [pytest-flask](https://pytest-flask.readthedocs.io/en/latest/index.html) extension for simple testing of routes.
+
+--
+
+```python
+import pytest
+from project import create_app
+
+class Tests:
+
+  def test_foo(self):
+      app = create_app('flask_test.cfg') # this method must be defined in production code and must return the flask app object
+      with app.test_client() as test_client:
+          response = test_client.get('/foo')
+          assert response.status_code == 200 "/foo should respond with an HTTP 200 status code"
+          response_obj = json.loads(response.data.decode('utf8')) # convert json response body data into an object
+          assert response_obj.success == True, "Expected the response object to have a property 'success' with value True"
+```
+
 ---
 
 name: test-cases
@@ -268,7 +303,7 @@ Unit tests must test at least two scenarios, called **test cases**:
 
 --
 
-In actuality, there will be multiples test cases for every possible variety of valid and invalid input.
+In actuality, there will usually be **many test cases** per production function for every possible variety of valid and invalid input.
 
 ---
 
@@ -568,7 +603,19 @@ The following are the recommended tools for unit testing in Python.
 
 --
 
-Documentation on each of these sites is relatively good.
+- [monkeypatch](https://docs.pytest.org/en/6.2.x/monkeypatch.html) for mocking and faking.
+
+--
+
+Documentation on each of these sites is reasonably good.
+
+---
+
+template: tools
+
+## Python (continued)
+
+- To learn more about unit testing in Python, watch the LinkedIn Learning video "[Unit Testing and Test Driven Development](https://www.linkedin.com/learning/unit-testing-and-test-driven-development-in-python/welcome?autoplay=true&u=2131553)"
 
 ---
 
@@ -581,3 +628,7 @@ name: conclusions
 This slide deck has attempted to give you a high-level overview of the intentions and directions of unit testing. Now go and try it.
 
 - Thank you. Bye.
+
+```
+
+```
