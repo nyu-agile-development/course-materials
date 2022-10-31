@@ -173,7 +173,7 @@ template: examples
 
 ## Javascript
 
-A unit test example in Javascript using mocha:
+A unit test example in Javascript using `mocha`:
 
 --
 
@@ -198,9 +198,9 @@ describe("Array", function () {
 
 template: examples
 
-## Test of a back-end route using chai-http
+## Javascript (continued)
 
-A unit test example of a back-end route using `mocha`, `chai`, and the `chai-http` extension for simple testing of routes.
+A unit test example of a back-end route using `mocha`, `chai`, and the [chai-http](https://www.chaijs.com/plugins/chai-http/) extension for simple testing of routes.
 
 --
 
@@ -218,6 +218,32 @@ describe("GET request to /foo route", () => {
       })
   })
 })
+```
+
+---
+
+template: examples
+
+## Python
+
+A unit test example in Python using `pytest`:
+
+--
+
+```python
+import pytest
+from some_package import some_module
+
+class Tests:
+
+  def test_some_function(self):
+    '''
+    Verify some_function() returns a non-empty string.
+    '''
+    actual = some_module.some_function() # get the actual return value of the function
+    assert isinstance(actual, str), f"Expected some_function() to return a string. Instead, it returned {actual}"
+    assert len(actual) > 0, f"Expected some_function() not to be empty. Instead, it returned a string with {len(actual)} characters"
+
 ```
 
 ---
@@ -271,7 +297,7 @@ name: assertions-1
 
 ## Typical Assertions
 
-This is a partial list of methods in JUnit's asssertion library that all other testing frameworks tend to imitate:
+This is a partial list of methods in **JUnit's asssertion library** that all other testing frameworks tend to imitate:
 
 --
 
@@ -468,11 +494,11 @@ Like, mocks and stubs, fakes are used in the simulation of an external dependenc
 
 name: tools
 
-# Javascript Testing Tools
+# Testing Tools
 
 --
 
-## Recommendations
+## Javascript
 
 The following are the recommended tools for unit testing in Node.js Javascript.
 
@@ -502,15 +528,9 @@ The following are the recommended tools for unit testing in Node.js Javascript.
 
 ---
 
-name: conclusions
+template: tools
 
-# Conclusions
-
---
-
-This slide deck has attempted to give you a high-level overview of the intentions and directions of unit testing. Now go and try it.
-
---
+## Javascript (continued)
 
 - To learn more about refactoring your code to be suitable for unit testing, watch the LinkedIn Learning video "[Prepare for Testing](https://www.linkedin.com/learning/node-js-essential-training-web-servers-tests-and-deployment/prepare-for-testing)"
 
@@ -526,6 +546,38 @@ This slide deck has attempted to give you a high-level overview of the intention
 
 - Learn how to make doubles with `sinon` by watching [this video](https://www.youtube.com/watch?v=Qlmv7nox5pM) from the Grace Hopper Full Stack Academy, and reading its [documentation](https://sinonjs.org/#get-started).
 
+---
+
+template: tools
+
+## Python
+
+The following are the recommended tools for unit testing in Python.
+
 --
+
+- [pytest](https://docs.pytest.org/en/7.2.x/) as the Python testing framework.
+
+--
+
+- [pytest-flask](https://pytest-flask.readthedocs.io/en/latest/) - a module that helps test flask routes using pytest
+
+--
+
+- [coverage](https://coverage.readthedocs.io/en/latest/) for code coverage analysis.
+
+--
+
+Documentation on each of these sites is relatively good.
+
+---
+
+name: conclusions
+
+# Conclusions
+
+--
+
+This slide deck has attempted to give you a high-level overview of the intentions and directions of unit testing. Now go and try it.
 
 - Thank you. Bye.

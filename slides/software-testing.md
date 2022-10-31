@@ -219,7 +219,7 @@ A unit is the smallest testable unit of code - typically a function.
 
 template: unit-testing
 
-## Example
+## Javascript Example
 
 A unit test example in Javascript using the `mocha` unit testing framework and Node.js's built-in assertion library, `assert`:
 
@@ -238,6 +238,32 @@ describe("Array", function () {
     })
   })
 })
+```
+
+---
+
+template: unit-testing
+
+## Python Example
+
+A unit test example in Python using `pytest`:
+
+--
+
+```python
+import pytest
+from some_package import some_module
+
+class Tests:
+
+  def test_some_function(self):
+    '''
+    Verify some_function() returns a non-empty string.
+    '''
+    actual = some_module.some_function() # get the actual return value of the function
+    assert isinstance(actual, str), f"Expected some_function() to return a string. Instead, it returned {actual}"
+    assert len(actual) > 0, f"Expected some_function() not to be empty. Instead, it returned a string with {len(actual)} characters"
+
 ```
 
 ---
