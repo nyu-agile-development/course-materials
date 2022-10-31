@@ -5,14 +5,21 @@ permalink: /syllabus/
 
 # Syllabus
 
+Agile Software Development & DevOps<br />
+New York University<br />
+Department of Computer Science
+
 ## Course description
 
-Developing software with an iterative agile approach while integrating fundamental devops and automation practices. Students work for almost the entire semester in a single team specifying and building a single application of their own design for mobile devices.
+Agile software development has come to describe a specific approach and toolset that allow for the requirements of a software project to change as a project progresses without disrupting schedules, budgets, and responsibilities. The field of DevOps, a portmanteau of development and operations, has introduced further processes and infrastructure to automate many of the tasks required in such development. Together, an Agile methodology and DevOps automation have increased the speed, robustness, and scalability with which software is developed today and have reduced the uncertainty of outcomes inherent in complex software development. Upon completion of this course, students will understand the core methodologies, technologies, and tools used in the software industry today.
 
-## Tentative lecture topics
+## Learning objectives
+
+Upon completing this course, students will be familiar with some of the most important software development tools and practices, including:
 
 - Agile development
 - Version control
+- Code collaboration
 - Web architecture
 - Javascript / ECMAScript
 - Mobile web application design
@@ -24,42 +31,46 @@ Developing software with an iterative agile approach while integrating fundament
 - User authentication
 - Deployment
 
+To achieve mastery in these topics, students will take quizzes corresponding to the material covered in each lecture while also working with a single team on a single software project for the majority of the semester.
+
+While significant class time is dedicated to hands-on student work, students are expected to collaborate with their teams for 5-10 hours each week reviewing instructional materials provided by the instructor and programming their software projects.
+
 ## Instructor
 
-- [Amos Bloomberg](https://amosbloomberg.com)
+Amos Bloomberg<br />amos@cs.nyu.edu<br />WWH 424
 
 ## Getting help
 
-Help resources available to you are listed in order of “seriousness” of your problem:
+Help resources available to you are listed in order of urgency of your problem:
 
 ### Messaging
 
-Our course uses Discord as its main communication channel for announcements and discussion. This is a good place to ask questions that anyone - other students, graders, tutors, or the professor - can answer.
-
-Create a private channel named `assgn_fb1258`, where `fb1258` is replaced with your own NYU Net ID. Invite the graders to that channel (we will tell you how to do this).
-
-You are not required to supply any personally-identifiable information when signing up for any software services we use. Discuss with the professor if you have concerns or questions about privacy.
+Our course will use a message board (link to be distributed in class) as its main communication channel for announcements and discussion. This is a good place to ask questions that anyone - other students, graders, tutors, or the professor - can answer. This is a resource best used when the answer is not required urgently.
 
 ### Tutoring
 
-Tutors for this course are waiting to answer your questions remotely using Zoom meeting software.
+Tutors for this course are waiting to answer your questions, either on our message board or during dedicated tutoring hours. Use tutoring for more involved questions and when you prefer a more immeidate answer.
 
 Tutoring hours (all times in Eastern Time):
 
 - TBD
 
-### Talk with the professor
+### Talk with the instructor
+
+For any issues at all, contact the instructor:
 
 - see me before class
 - raise your hand or simply speak during class
 - see me after class
-- come to my [open office hours](https://knowledge.kitchen/Amos_Bloomberg#Contact_Info)
+- come to my open office hours - hours to be distrubuted in class
 
 ### Additional tutoring resources
 
-Academic support is also available through the [University Learning Center](http://www.nyu.edu/ulc).
+Additional academic support is also available through the [University Learning Center](http://www.nyu.edu/ulc).
 
 ## Required software and hardware
+
+All students require access to a computer on which they can write software using a specific set of applications. Computers at any of the university's computer labs will do, as will any laptop or desktop computer.
 
 ### i6 account
 

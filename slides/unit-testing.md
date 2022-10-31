@@ -371,6 +371,30 @@ template: assertions-1
 
 ---
 
+name: setup-teardown
+
+# Setup & Teardown
+
+--
+
+## Overview
+
+`xUnit` unit testing frameworks all support the concept of **setup** and **teardown** functions.
+
+--
+
+- these are functions that are automatically run by the frameworks before and after the tests are run, respectively
+
+--
+
+- they can be used to set up and remove any variables or objects or other dependencies required by the tests
+
+--
+
+- most frameworks provide the ability to run such functions before/after an entire test class is instantiated and/or before/after a specific test function is run.
+
+---
+
 name: best-practices
 
 # Best Practices
