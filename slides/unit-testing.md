@@ -393,6 +393,10 @@ name: setup-teardown
 
 - most frameworks provide the ability to run such functions before/after an entire test class is instantiated and/or before/after a specific test function is run.
 
+--
+
+- this helps reduce code duplication, as multiple tests can share the same setup and teardown logic.
+
 ---
 
 name: best-practices
