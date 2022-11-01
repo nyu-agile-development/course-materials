@@ -147,4 +147,4 @@ If a student requests a regrade of any work, we will regrade the work in full, n
 
 Working with others and leveraging all resources available to you is a prerequisite for success. This is different from copying, cheating, plagiarism, and mental laziness. All submitted work must be your own. There are very reliable systems we use to detect plagiarism in computer code, such as [moss](http://theory.stanford.edu/~aiken/moss/) and [compare50](https://github.com/cs50/compare50). If you submit any work that is not your own, you risk failure or worse.
 
-Please read the [http://cs.nyu.edu/home/undergrad/policy.html Computer Science department's policy on academic integrity] and the [university-wide policy](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html) which supercedes it.
+Please read the [Computer Science department's policy on academic integrity](http://cs.nyu.edu/home/undergrad/policy.html) and the [University-wide policy](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html) which supercedes it.
