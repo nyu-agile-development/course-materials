@@ -156,7 +156,7 @@ With most Continuous Integration tools, notifications can be sent via
 
 --
 
-- Slack or Discord messages
+- Slack, Discord, or MS Teams messages
 
 --
 
@@ -346,14 +346,6 @@ Circle CI's build and test configuration is written in [YAML](https://yaml.org/)
 
 template: circle-ci
 
-## Highly configurable
-
-Circle CI supports detailed instructions and can run arbitrary code at various lifecycle points in the build.
-
----
-
-template: circle-ci
-
 ## GitHub integration
 
 To link Circle CI to a GitHub repository, such that it detects changes to the repository and triggers continuous integration builds and testing, go to [circleci.com](https://circleci.com).
@@ -370,9 +362,17 @@ To link Circle CI to a GitHub repository, such that it detects changes to the re
 
 template: circle-ci
 
+## Highly configurable
+
+Circle CI supports detailed instructions and can run arbitrary code at various lifecycle points in the build.
+
+---
+
+template: circle-ci
+
 ## Messenger integration
 
-Circle CI can send notifications to Slack or other messenger apps indicating the results of the latest build.
+Circle CI can send notifications to Discord, Slack, MS Teams or other messenger apps indicating the results of the latest build.
 
 --
 
@@ -418,6 +418,10 @@ By default, both _errors_ and _warnings_ produced by a project will cause the co
 
 - For a React.js project, set this environment variable by modifying the `build` script in the `package.json` file to: ` "build": "CI=false && react-scripts build"`
 
+--
+
+- For other types of projects, it is possible to set this environment variable directly within the workflow file.
+
 ---
 
 name: github-actions
@@ -430,12 +434,93 @@ name: github-actions
 
 Like other continuous integration services, GitHub Actions is a hosted service that runs automated builds, tests, and other processes on a virtual machine.
 
+---
+
+template: github-actions
+
+## Virtual build servers
+
+When a change is detected in version control (whether a push, pull request, merge, or other), GitHub Actions boots up a new virtual server.
+
 --
 
-- configuration files, known as "workflows", are written in [YAML](https://yaml.org/) (YAML Ain't Markup Language).
+- GitHub Actions clones the version control repository into the virtual machine, and performs the build and test.
+
+---
+
+template: github-actions
+
+## Key features
+
+GitHub Actions comes with the common features of any continuous integration server.
+
+--
+
+- hosted continuous integration solution
+
+--
+
+- free tier
+
+--
+
+- at its simplest, requires the addition of a configuration file to a repository
+
+--
+
+- supports building and testing of many programming languages
+
+--
+
+- integrates with other popular DevOps tools and practices
+
+---
+
+template: github-actions
+
+## GitHub integration
+
+As a part of a GitHub repository, GitHub Actions does not need any special setup in order to detects change to the repository and trigger continuous integration builds and testing.
+
+--
+
+- As a best practice, have GitHub Actions _perform automated builds on pull requests_. This allows the pull request reviewer to be sure the code builds and passes automated tests prior to merging the code.
+
+--
+
+- This also better conserves the free executable minutes given to the repository owner's account.
+
+---
+
+template: github-actions
+
+## Basic configuration
+
+Configuration files, known as "workflows", are written in [YAML](https://yaml.org/) (YAML Ain't Markup Language).
+
+--
+
 - configuration files are stored in a `.github/workflows` directory in the project repository.
+
+--
+
 - workflows in GitHub Actions, as in other automation tools, can run aribtrary shell commands to perform any task.
+
+--
+
 - GitHub maintains a marketplace of [pre-built actions](https://github.com/marketplace?type=actions) that can be used in your own custom workflows.
+
+--
+
+- GitHub Actions currently offers a limited number of execution minutes [for free](https://github.com/pricing), and charges for additional usage.
+
+---
+
+template: circle-ci
+
+## Highly configurable
+
+GitHub Actions supports detailed instructions and can run arbitrary code at various lifecycle points in the build.
 
 ---
 
@@ -443,21 +528,17 @@ template: github-actions
 
 ## Example
 
-A simple workflow that runs a build and test on every pull_request made to the repository:
+A [Python build/test workflow](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python) that runs on every pull request. [Linting using pylint](https://github.com/marketplace?type=actions&query=pylint+) or other code linter could easily be added.
 
 ```
 name: Python build test
-
 on: [pull_request]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
-
+        python-version: ["3.6", "3.8", "3.10"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -476,11 +557,63 @@ jobs:
 
 ---
 
-name: conclusions
+name: github-actions
 
-# Conclusions
+## Badges
+
+You can embed build/test [status badges](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge) that GitHub Actions will use to automatically _show the latest status of your build_ into your project's `README.md`.
+
+--
+
+- The Markdown code to use for status badge images are shown on your GitHub Actions project settings page, and are something like:
+
+```
+![Your custom badge name](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+```
 
 ---
+
+template: github-actions
+
+## Messenger integration
+
+GitHub Actions can send notifications to Discord, Slack, MS Teams or other messenger apps indicating the results of the latest build.
+
+--
+
+- To do so, GitHub Actions must be authorized for the given messenger app workspace.
+
+--
+
+- So your instructor may, unfortunately, be reluctant to allow this.
+
+---
+
+template: github-actions
+
+## Warnings Cause Build Failure
+
+By default, both _errors_ and _warnings_ produced by a project will cause the continuous integration server to fail the build.
+
+--
+
+- React.js projects are particularly prone to issuing many warnings that cause the build to fail.
+
+--
+
+- if an environment variable `CI` is set to `false`, most continuous integration servers will ignore warnings.
+
+--
+
+- For a React.js project, set this environment variable by modifying the `build` script in the `package.json` file to: ` "build": "CI=false && react-scripts build"`
+
+--
+
+- For other types of projects, it is possible to set this environment variable directly within the workflow file.
+
+---
+
+name: conclusions
 
 # Conclusions
 
