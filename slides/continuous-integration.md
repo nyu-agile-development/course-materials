@@ -15,11 +15,12 @@ Automatically run unit tests.
 # Agenda
 
 1. [Overview](#overview)
-2. [Typical Workflow](#ci-workflow)
-3. [Best Practices](#best-practices)
-4. [Software as a Service](#software-as-service)
-5. [Circle CI](#circle-ci)
-6. [Conclusions](#conclusions)
+1. [Typical Workflow](#ci-workflow)
+1. [Best Practices](#best-practices)
+1. [Software as a Service](#software-as-service)
+1. [Circle CI](#circle-ci)
+1. [GitHub Actions](#github-actions)
+1. [Conclusions](#conclusions)
 
 ---
 
@@ -335,7 +336,7 @@ template: circle-ci
 
 ## Basic configuration
 
-Circle CI's build and test configuration is written in YAML (YAML Ain't Markup Language) and saved into a file named `config.yml` in a `.circleci` directory of your project.
+Circle CI's build and test configuration is written in [YAML](https://yaml.org/) (YAML Ain't Markup Language) and saved into a file named `config.yml` in a `.circleci` directory of your project.
 
 --
 
@@ -416,6 +417,62 @@ By default, both _errors_ and _warnings_ produced by a project will cause the co
 --
 
 - For a React.js project, set this environment variable by modifying the `build` script in the `package.json` file to: ` "build": "CI=false && react-scripts build"`
+
+---
+
+name: github-actions
+
+# GitHub Actions
+
+--
+
+## Overview
+
+Like other continuous integration services, GitHub Actions is a hosted service that runs automated builds, tests, and other processes on a virtual machine.
+
+--
+
+- configuration files, known as "workflows", are written in [YAML](https://yaml.org/) (YAML Ain't Markup Language).
+- configuration files are stored in a `.github/workflows` directory in the project repository.
+- workflows in GitHub Actions, as in other automation tools, can run aribtrary shell commands to perform any task.
+- GitHub maintains a marketplace of [pre-built actions](https://github.com/marketplace?type=actions) that can be used in your own custom workflows.
+
+---
+
+template: github-actions
+
+## Example
+
+A simple workflow that runs a build and test on every pull_request made to the repository:
+
+```
+name: Python build test
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Test with pytest
+        run: |
+          pytest
+```
 
 ---
 
