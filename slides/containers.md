@@ -796,27 +796,56 @@ By default, **Docker containers do not have access to devices** attached to the 
 
 template: docker-devices
 
-## Privileged mode
+## Access all devices
 
-Docker provides a [privileged mode](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities) that allows a container to access all devices attached to the host machine.
+Docker provides a [privileged mode](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities) that allows a container to **access all devices** attached to the host machine.
 
 ```bash
-docker run --privileged -ti ubuntu:latest
+docker run -ti --privileged ubuntu:latest
 ```
 
 --
 
-Applications running with the container can now access host machine devices located in the standard Unix/Linux device directory, e.g. `/dev/video0`.
+Applications running within the container can now access all host machine devices, which on \*NIX machines are located in the `/dev` directory, e.g. `/dev/video0`, `/dev/snd`, etc.
+
+--
+
+... in theory...
 
 ---
 
-## Attaching specific devices to containers
+template: docker-devices
 
-To attach a specific device on the host machine to the container, use the `--device` option:
+## Access specific devices
+
+To **access only specific devices** on the host machine to the container, use the `--device` option:
 
 ```bash
 docker run -ti --device /dev/video0 ubuntu:latest
 ```
+
+--
+
+If you need to map a host machine device, e.g. `/dev/sda` to a different device name in the container, e.g. `/dev/xvdc`, use a colon separating host device name from container device name, e.g.:
+
+```bash
+docker run -ti --device /dev/sda:/dev/xvdc ubuntu:latest
+```
+
+--
+
+To support multiple devices, just repeat the `--device` flag, e.g.:
+
+```bash
+docker run -ti --device /dev/video0 --device /dev/sda:/dev/xvdc ubuntu:latest
+```
+
+--
+
+Applications running within the container can now access the specified host machine devices...
+
+--
+in theory...
 
 ---
 
@@ -824,15 +853,15 @@ template: docker-devices
 
 ## Attaching Windows or Mac devices to containers
 
-The default virtual machine used by docker on Mac and Windows, within which containers are run, is unable to provide access to devices attached to the host machine. To get around this, a different virtual machine must be used.
+It turns out that the default virtual machine used by Docker, within which containers are run, is **unable to provide access to devices attached to the host machine on Mac and Windows**! To get around this, a different virtual machine must be used.
 
 --
 
-- At the time of this writing, this requires a lot of fiddling with settings - see [here](https://medium.com/@jijupax/connect-the-webcam-to-docker-on-mac-or-windows-51d894c44468) and [here](https://stackoverflow.com/questions/33985648/access-camera-inside-docker-container) for setting up the camera.
+- At the time of this writing, this requires a lot of fiddling with settings - see [here](https://medium.com/@jijupax/connect-the-webcam-to-docker-on-mac-or-windows-51d894c44468) and [here](https://stackoverflow.com/questions/33985648/access-camera-inside-docker-container) for setting up the camera. And [here](https://stackoverflow.com/questions/54702179/how-to-access-mac-os-x-microphone-inside-docker-container) for setting up the microphone on Mac.
 
 --
 
-- It may be necessary to research the latest discussions and tutorials on this topic.
+- It may be necessary to research the latest documentation, discussions and tutorials on this topic.
 
 ---
 
