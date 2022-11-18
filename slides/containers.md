@@ -795,6 +795,7 @@ By default, **Docker containers do not have access to devices** attached to the 
 ---
 
 template: docker-devices
+name: docker-devices-linux
 
 ## Access all devices
 
@@ -810,7 +811,7 @@ Applications running within the container can now access all host machine device
 
 --
 
-... in theory...
+... at least on Linux...
 
 ---
 
@@ -845,7 +846,7 @@ docker run -ti --device /dev/video0 --device /dev/sda:/dev/xvdc ubuntu:latest
 Applications running within the container can now access the specified host machine devices...
 
 --
-in theory...
+at least on Linux...
 
 ---
 
@@ -862,6 +863,29 @@ It turns out that the default virtual machine used by Docker, within which conta
 --
 
 - It may be necessary to research the latest documentation, discussions and tutorials on this topic.
+
+---
+
+template: docker-devices
+
+## Attaching a Raspberry Pi's devices to containers
+
+Why yes, I'm glad you asked!
+
+--
+You can [run Docker containers on the Raspberry Pi](https://raspberrytips.com/docker-on-raspberry-pi/)!
+
+--
+
+- [Raspberry Pi](https://raspberrypi.com) is a series of small cheap powerful single circuit board computers often used for educational purposes and in embedded systems and "Internet of Things" devices, where computers are placed in physical objects, communicating with each other and other systems across the Internet.
+
+--
+
+- It is possible to install a variety of operating systems on Pis. The most popular is [Raspbery Pi OS](https://www.raspberrypi.com/software/), a variation of the [Debian](https://en.wikipedia.org/wiki/Debian) Linux distribution.
+
+--
+
+- One nice thing about using a Linux-based operating system, rather than Mac or Windows, is that it's possible to **run Docker** on it and it's possible to **connect any devices** connected to the host machine (e.g. camera, microphone, and a wide variety of other [add-on devices](https://www.adafruit.com/category/286)) [to the container](#docker-devices-linux), since this is simple with Linux.
 
 ---
 
@@ -998,7 +1022,7 @@ template: docker-compose
 An example `docker-compose.yaml` for a basic [MERN-stack](https://www.mongodb.com/mern-stack) web app:
 
 ```yaml
-version: "3.7"
+version: "3.8"
 
 services:
   frontend:
@@ -1007,8 +1031,6 @@ services:
       - 3000:3000 # map port 3000 of host machine to port 3000 of container
     depends_on:
       - backend
-    volumes:
-      - ./front-end:/app # mount the host machine's directory as a volume in the container
     command: npm start # command to start up the front-end once the container is up and running
 # ... continued on next slide...
 ```
@@ -1016,6 +1038,7 @@ services:
 ---
 
 template: docker-compose
+name: docker-compose-example-backend
 
 ## Example: MERN-stack web app (continued)
 
@@ -1026,10 +1049,12 @@ backend:
   build: ./back-end # build the Docker image from the Dockerfile in the back-end directory
   ports:
     - 5000:5000 # map port 5000 of host machine to port 5000 of container
+  environment:
+    DB_HOST: mongodb://db/foobar # set the DB_HOST environment variable to refer to a 'foobar' db in the 'db' service defined later in this docker-compose file
   depends_on:
     - db
   volumes:
-    - ./back-end:/app
+    - ./uploads:/uploads # a directory on the host machine where we can store any files uploaded to the back-end container
   command: npm start # command to start the back-end once the container is up and running
 # ... continued on next slide...
 ```
@@ -1044,11 +1069,11 @@ template: docker-compose
 # ... continued from previous slide
 
 db:
-  image: mongo:latest # use the latest version of the official MongoDB image on Docker Hub
+  image: mongo:4.0-xenial # use a recent version of the official MongoDB image on Docker Hub
   ports:
     - 27017:27017 # map port 27017 of host machine to port 27017 of container
   volumes:
-    - ./db:/data/db
+    - ./db:/data/db # a directory on the host machine where the data in the container's database will be stored
 ```
 
 That's it.... all three services are now configured in the `docker-compose.yaml` and ready to run.
@@ -1057,12 +1082,88 @@ That's it.... all three services are now configured in the `docker-compose.yaml`
 
 template: docker-compose
 
-## Example: MERN-stack web app (continued once more)
+## Starting all containers
 
 Now start up the application - all containers will be booted up with their ports and volumes set.
 
 ```bash
 docker compose up
+```
+
+--
+
+If you need to rebuild the components before starting them, use the `--build` flag:
+
+```bash
+docker compose up --build
+```
+
+--
+
+To run the containers in "detached mode", i.e. in the background:
+
+```bash
+docker compose up -d
+```
+
+---
+
+template: docker-compose
+
+## Viewing a list of running containers
+
+As you know, docker allows you to view a list of containers with `docker ps` or `docker ps -a`.
+
+--
+
+To view only those containers started with `docker-compose`, run:
+
+```bash
+docker-compose ps
+```
+
+--
+
+Or, to see all, including stopped containers:
+
+```bash
+docker-compose ps -a
+```
+
+---
+
+template: docker-compose
+
+## Networking among containers
+
+All containers started with `docker-compose` are automatically connected to a single network named after the directory in which the `docker-compose.yaml` file is located. Each service is named after the key used to define it in the `docker-compose.yaml` file.
+
+--
+
+To verify this for yourself, jump into the command shell of one of the running containers started by `docker-compose`, for example our earlier `frontend` container:
+
+```bash
+docker exec -it frontend bash
+```
+
+--
+
+Following our earlier example, the `backend` service defined in the [docker-compose.yaml example above](#docker-compose-example-backend) is now accessible from within the `frontend` container by referencing the name `backend`:
+
+```bash
+curl http://backend:5000/your-favorite-backend-api-route/
+```
+
+---
+
+template: docker-compose
+
+## Stopping all containers
+
+To stop containers started with `docker-compose up`, run the opposite command:
+
+```bash
+docker-compose down
 ```
 
 ---
