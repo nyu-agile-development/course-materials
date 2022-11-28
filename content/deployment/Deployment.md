@@ -11,7 +11,7 @@ This document outlines one method of setting up a Node.js-ready web server runni
 
 - There are certainly other ways to deploy a Node.js app on a DigitalOcean Droplet which will work just as successfully.
 - The steps outlined below work at the time of this writing, but may have to be adjusted to match changes in the technologies used as time goes by.
-- The link to Digital Ocean above includes a referral code - this will give you **$50 free credit**. Considering that a simple Digital Ocean Droplet server costs $5/month, this credit will serve you very well. I will receive a discount on my own account should you begin paying for DigitalOcean once your free credit runs out.
+- The link to Digital Ocean above includes a referral code - this will give you **$200 free credit**. Considering that a simple Digital Ocean Droplet server costs around $5/month, this credit will serve you very well. I will receive a discount on my own account should you begin paying for DigitalOcean once your free credit runs out.
 
 ## Create a Digital Ocean Droplet
 
