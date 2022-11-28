@@ -241,16 +241,21 @@ name: servers
 --
 
 ## Overview
+
 There are a variety of options for accessing a MongoDB server.
+
 - cloud-based servers
 - university servers
 - personal hosted servers
+
 ---
 
 template: servers
 
 ## Cloud-based servers
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 
+
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+
 - cloud-based service that provides a free tier for small databases
 
 ---
@@ -258,7 +263,9 @@ template: servers
 template: servers
 
 ## University servers
+
 [NYU CIMS MongoDB server](https://cims.nyu.edu/webapps/content/systems/userservices/databases/class-mongodb)
+
 - accessible to NYU students in courses related to databases.
 
 ---
@@ -266,7 +273,9 @@ template: servers
 template: servers
 
 ## Local installation
-[MongoDB Community Server](https://www.mongodb.com/download-center/community) 
+
+[MongoDB Community Server](https://www.mongodb.com/download-center/community)
+
 - a free, open-source server that can be installed on your own computer
 
 ---
@@ -275,11 +284,14 @@ template: servers
 name: docker
 
 ## Local installation (continued)
+
 [Docker image](https://hub.docker.com/_/mongo)
+
 - Docker containers are small-footprint portable software environments
 - MongoDB maintains a Docker container image that can be used to run a MongoDB server locally in a container.
 
 To use...
+
 - install and run [docker desktop](https://www.docker.com/get-started)
 - create a [dockerhub](https://hub.docker.com/signup) account
 - run command, `docker run --name mongodb_dockerhub -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=secret -d mongo:latest`
@@ -297,6 +309,7 @@ name: clients
 --
 
 ## Overview
+
 Connecting to a MongoDB server requires some sort of client program, typically either a shell program that you run locally.
 
 ---
@@ -305,19 +318,22 @@ template: clients
 name: mongosh
 
 ## Mongo Shell
+
 To access a MongoDB server from the command line, one needs to install [mongosh](https://www.mongodb.com/docs/mongodb-shell/).
+
 - connect to a server: `mongosh your_database_name --host your_hostname -u your_username -p`.
-- e.g. `mongosh example --host class-mongodb.cims.nyu.edu -u fb1258 -p`...  after running this command, you will be asked for your password and then let in.
+- e.g. `mongosh example --host class-mongodb.cims.nyu.edu -u fb1258 -p`... after running this command, you will be asked for your password and then let in.
 
 Note that if running a MongoDB server [within a local Docker container](#docker), you already have `mongosh` available within the container.
-
 
 ---
 
 template: clients
 
 ## MongoDB Database Tools
+
 If connecting to a server from your local machine...
+
 - install [mongosh](#mongosh)
 - install `mongoimport` and other utilities in the [MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/).
 
@@ -328,9 +344,11 @@ template: clients
 ## Graphical User Interfaces
 
 [MongoDB Compass](https://www.mongodb.com/products/compass)
+
 - free GUI client for MongoDB by MongoDB
 
 [Studio 3T](https://studio3t.com/free/)
+
 - free GUI client for MongoDB
 
 ---
@@ -369,7 +387,7 @@ template: data-set
 
 If you typically connect to the MongoDB database server from a web server, such as **i6** , it's easy to upload the data file to the web server using a Secure File Transfer (SFTP) application like [Cyberduck](https://cyberduck.io/).
 
-![Cyberduck login]({{ site.baseurl }}/slides/files/mongodb/cyberduck.png)
+![Cyberduck login](../files/mongodb/cyberduck.png)
 
 ---
 
@@ -378,7 +396,9 @@ template: data-set
 ## Import the data into MongoDB
 
 To import the data file into a MongoDB database collection, go to the UNIX/Linux command line from where you typically connect to a MongoDB database, navigate to whichever folder you saved the data file into, and issue the following command:
+
 - Note that this requires the `mongoimport` utility - see [installation instructions](https://www.mongodb.com/docs/database-tools/mongoimport/#installation) if the command is not found on your system.
+
 ```bash
 mongoimport --db your_database_name --collection books --host database_host --username your_username --password your_password --type json --file books.json
 ```
@@ -441,7 +461,7 @@ db.books.insert({
   year_written: 2003,
   edition: "Penguin",
   price: 14.99,
-});
+})
 ```
 
 - where `books` is a collection name that already exists or will be created automatically
@@ -472,7 +492,7 @@ template: read
 ## Retrieve all documents
 
 ```javascript
-db.books.find();
+db.books.find()
 ```
 
 - where `books` is the collection from which to retrieve documents.
@@ -486,7 +506,7 @@ template: read
 ```javascript
 db.books.find({
   author: "Leo Tolstoy",
-});
+})
 ```
 
 - retrieves all books where the `author` field has the value `Leo Tolstoy`
@@ -502,7 +522,7 @@ db.books.find({
   price: {
     $gt: 25,
   },
-});
+})
 ```
 
 - The `$gt` operator performs a "greater than" comparison.
@@ -525,7 +545,7 @@ db.books.find(
   {
     _id: 0,
   }
-);
+)
 ```
 
 Notes:
@@ -546,7 +566,7 @@ db.books.find(
     _id: 0,
     title: 1,
   }
-);
+)
 ```
 
 Notes:
@@ -572,7 +592,7 @@ db.books.find({
       edition: "Penguin",
     },
   ],
-});
+})
 ```
 
 Notes:
@@ -593,7 +613,7 @@ db.books
   .find({
     edition: "Penguin",
   })
-  .count();
+  .count()
 ```
 
 ---
@@ -639,7 +659,7 @@ The following retrieval will match books where the `edition` field has exactly t
 ```javascript
 db.books.find({
   edition: "Penguin",
-});
+})
 ```
 
 --
@@ -659,7 +679,7 @@ db.books.find({
   edition: {
     $eq: "Penguin",
   },
-});
+})
 ```
 
 --
@@ -681,7 +701,7 @@ db.books.find({
     $lte: 20,
   },
   edition: "Penguin",
-});
+})
 ```
 
 --
@@ -722,7 +742,7 @@ db.books.find({
       },
     },
   ],
-});
+})
 ```
 
 - This is quite a mouthful of `(`, `[`, `{`, `$`, `,`, `}`, `]`, and `)` characters.
@@ -746,7 +766,7 @@ db.books.find({
       author: "Tolstoy, Leo",
     },
   ],
-});
+})
 ```
 
 ---
@@ -762,7 +782,7 @@ db.books.find({
   author: {
     $in: ["Gibson, William", "Tolstoy, Leo"],
   },
-});
+})
 ```
 
 ---
@@ -778,7 +798,7 @@ db.books.find({
   year_written: {
     $nin: [1865, 1925, 1927, 1802, 1814, 1999],
   },
-});
+})
 ```
 
 ---
@@ -798,7 +818,7 @@ db.books.update(
   { year_written: { $lt: 2000 } },
   { $set: { price: 5.99 } },
   { multi: true }
-);
+)
 ```
 
 - the first argument specifies the criteria indicating which documents to update
@@ -821,7 +841,7 @@ To delete existing documents, use the `remove()` method.
 db.books.remove({
   author: "William Gibson",
   title: "Pattern Recognition",
-});
+})
 ```
 
 - the argument sets the criteria that must be matched for any documents to be deleted
