@@ -656,7 +656,3 @@ name: conclusions
 This slide deck has attempted to give you a high-level overview of the intentions and directions of unit testing. Now go and try it.
 
 - Thank you. Bye.
-
-```
-
-```
