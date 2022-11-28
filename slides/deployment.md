@@ -163,6 +163,8 @@ template: cloud-deployments
 
 ---
 
+template: cloud-deployments
+
 ## Cloud resources
 
 Cloud services providers offer a variety of resources to developers.
