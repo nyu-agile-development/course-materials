@@ -54,7 +54,7 @@ template: definitions
 
 ### Deployment
 
-- **Deployment** is making executing the delivered app and making it available to its end-users.
+- **Deployment** is placing an app into its target environment, executing it, and making it available to its end-users.
 
 --
 
@@ -67,6 +67,10 @@ template: overview
 ## Caveats
 
 New releases of software, of course, must still successfully build and pass unit, integration and system tests before deployment.
+
+--
+
+- Thus, Continuous Deployment is a follow-up to Continuous Integration.
 
 ---
 
@@ -84,14 +88,22 @@ name: production-environment
 
 --
 
-## Hosting levels
+## Hosting tiers
 
-There are several levels of hosting available for web applications, with many companies and services catering to each type
+There are several tiers of hosting available for web applications and other apps that can be accessed over the Internet, with many companies and services catering to each type
 
 - Shared hosting
-- Virtual Private Servers (VPS)
 - Dedicated machines
+- Virtual Private Servers (VPS)
 - Cloud services
+
+---
+
+template: production-environment
+
+## Hosting tiers (continued)
+
+![Hosting tiers](../files/deployment/shared-hosting.png)
 
 ---
 
@@ -101,9 +113,10 @@ template: production-environment
 
 With shared hosting, a developer receives an account on a web server shared by hundreds, if not thousands, of other developers.
 
-- Historically the cheapest form of hosting
-- May have restrictions in what is allowed to bee done in the account
-- If one developer consumes more resources than expected, other developers may feel the effects
+- Historically the cheapest form of hosting.
+- If one developer consumes more resources than expected, other developers may feel the effects... the "noisy neighbor" problem.
+- Has restrictions on what is allowed to be done from a user account... no admin rights.
+- No choice of hardware... limited choice of software.
 
 --
 
@@ -113,25 +126,28 @@ Universities and other large organizations often provide shared hosting for thei
 
 template: production-environment
 
-## Virtual Private Servers (VPS)
+## Dedicated machine
 
-With VPS, a developer receives a virtual machine running on a physical machine shared by hundreds, if not thousands, of other users.
+With a dedicated machine, i.e. a bare metal server, developers buy or rent a single physical machine managed by either themselves or the hosting company from whom it is rented.
 
-- A step up from shared hosting
-- Developers usually have discretion to do whatever they want in their virtual machine
-- Each virtual machine runs in an isolated, sandboxed environment, so one account is unaffected by resourcee usage of another
+- A dedicated physical machine... no virtualization... no neighbors.
+- Admin rights to do whatever you want with it.
+- Software and hardware management services usually offered at additional cost.
+- Resources limited by the physical machine.
 
 ---
 
 template: production-environment
 
-## Dedicated machine
+## Virtual Private Servers (VPS)
 
-With a dedicated machine, i.e. a bare metal server, developers buy or rent a single physical machine managed by either themselves or the hosting company from whom it is rented.
+With VPS, a developer receives a virtual machine running on a physical machine shared by hundreds, if not thousands, of other users.
 
-- A dedicated physical machine
-- Admin rights to do whatever you want with it
-- Software and hardware management services usually offered at additional cost.
+- A step up from shared hosting, giving more control and better isolation.
+- Each virtual machine runs in an isolated, sandboxed environment, so one account is unaffected by resourcee usage of another... no "noisy neighbor" problem.
+- Developers have discretion to do whatever they want in their virtual machine.
+- Choice of emulated hardware and software.
+- Resources limited by the physical machine upon which virtual machine is running.
 
 ---
 
@@ -140,6 +156,14 @@ template: production-environment
 ## Cloud deployments
 
 Deploying to "the cloud" is a catch-all term for deploying to a remote server that is [managed by a third party](https://www.zdnet.com/article/stop-saying-the-cloud-is-just-someone-elses-computer-because-its-not/).
+
+---
+
+template: production environment
+
+## Cloud deployments (continued)
+
+![Cloud versus VPS](../files/deployment/vps-versus-cloud.png)
 
 ---
 
@@ -169,7 +193,7 @@ template: cloud-deployments
 
 Cloud services providers offer a variety of resources to developers.
 
-- Virtual machines and/or containers (a.k.a "_compute_" services)
+- Compute services, i.e. virtual machines and/or containers running app code.
 - Databases
 - Storage
 - Networking
