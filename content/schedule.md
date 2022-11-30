@@ -78,11 +78,11 @@ A Scrum sprint focused on integrating databases into the application.
 
 A Scrum sprint focused on finishing up and deploying the application.
 
-| Date  | Class | Topics            | Notes                            | Helpful resources | Quiz due | Scrum tasks due                             | Exercise due                                                             |
-| :---- | :---- | :---------------- | :------------------------------- | :---------------- | :------- | :------------------------------------------ | :----------------------------------------------------------------------- |
-| 11/29 | 22    | Deployment        | [Deployment](slides/deployment/) |                   |          | - Stakeholder demo<br />- Sprint 4 planning | [Completed express.js back-end](https://classroom.github.com/a/vT_EMpcu) |
-| 12/1  | 23    | Project work      |                                  |                   |          |                                             |                                                                          |
-| 12/6  | 24    | Stakeholder demos |                                  |                   |          |                                             |                                                                          |
+| Date  | Class | Topics            | Notes                            | Helpful resources                                             | Quiz due | Scrum tasks due                             | Exercise due                                                             |
+| :---- | :---- | :---------------- | :------------------------------- | :------------------------------------------------------------ | :------- | :------------------------------------------ | :----------------------------------------------------------------------- |
+| 11/29 | 22    | Deployment        | [Deployment](slides/deployment/) | [Digital Ocean referral link](https://m.do.co/c/4d1066078eb0) |          | - Stakeholder demo<br />- Sprint 4 planning | [Completed express.js back-end](https://classroom.github.com/a/vT_EMpcu) |
+| 12/1  | 23    | Project work      |                                  |                                                               |          |                                             |                                                                          |
+| 12/6  | 24    | Stakeholder demos |                                  |                                                               |          |                                             |                                                                          |
 
 ### Release
 
