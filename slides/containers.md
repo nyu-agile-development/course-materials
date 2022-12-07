@@ -726,6 +726,29 @@ So now incoming connections to port `45678` of the host machine will forward to 
 
 ---
 
+template: docker-networking
+
+## Create Docker Network
+
+Multiple docker containers can be interconnected within a single a docker network. This simplifies the process of having one container communicate with another.
+
+--
+
+- Create a docker network with the [`docker network create <put-any-options-here> <network-name>`](https://docs.docker.com/engine/reference/commandline/network_create/) command, e.g. `docker network create foobar_network`.
+
+--
+
+- Containers can be added to the network with the `docker run` using the `--network <network-name>` flag, e.g.
+  - `docker run --name db --p 27017:27017 --network foobar_network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo:latest`
+  - `docker run -ti --name web_app --network foobar_network bloombar/flask-mongodb-web-app-example`
+
+--
+
+- Code within a container on this network can now reference other containers on the same network by their container name.
+  - `mongo:latest` can be referenced as `db` within the `web_app` container, e.g. `mongosh db:27017 --username admin --password secret` (assuming the `web_app` container has the [mongosh](https://www.mongodb.com/docs/mongodb-shell/) shell installed).
+
+---
+
 name: docker-volumes
 
 # Docker Volumes
@@ -916,6 +939,18 @@ To build a Docker image and share it with Docker Hub,
 --
 
 - Tag your image with a version number: `docker tag <username>/<repository_name> <username>/<repository_name>:<version>`, where `<version>` is replaced with the version, e.g. `v1`.
+
+--
+
+template: docker-build
+
+## Build for multiple processor types
+
+Docker images are by default built for the same type of processor type as the machine on which the `docker build` command is run, typically processors that follow the [x86](https://en.wikipedia.org/wiki/X86) instruction set. This works fine when building images that will run on common desktop/laptop machines. However, many mobile devices and embedded computing devices such as the Raspberry Pi, use [ARM processors](https://en.wikipedia.org/wiki/ARM_architecture_family), whose instruction sets are not compatible with that of `x86` processors. When building Docker images that must be able to run on multiple processor types, Docker's [buildx](https://docs.docker.com/engine/reference/commandline/buildx_build/) tool allows building images for multiple processor types in a single command.
+
+--
+
+- e.g. `docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <username>/<repository_name> .`
 
 ---
 
