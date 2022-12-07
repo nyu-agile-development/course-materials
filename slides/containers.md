@@ -958,7 +958,9 @@ When building Docker images that must be able to run on multiple processor types
 
 --
 
-- e.g. `docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <username>/<repository_name> .`
+e.g.
+
+`docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <username>/<repository_name> .`
 
 ---
 
