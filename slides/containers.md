@@ -946,7 +946,13 @@ template: docker-build
 
 ## Build for multiple processor types
 
-Docker images are by default built for the same type of processor type as the machine on which the `docker build` command is run, typically processors that follow the [x86](https://en.wikipedia.org/wiki/X86) instruction set. This works fine when building images that will run on common desktop/laptop machines. However, many mobile devices and embedded computing devices such as the Raspberry Pi, use [ARM processors](https://en.wikipedia.org/wiki/ARM_architecture_family), whose instruction sets are not compatible with that of `x86` processors. When building Docker images that must be able to run on multiple processor types, Docker's [buildx](https://docs.docker.com/engine/reference/commandline/buildx_build/) tool allows building images for multiple processor types in a single command.
+Docker images are by default built for the same type of processor type as the machine on which the `docker build` command is run, typically processors that follow the [x86](https://en.wikipedia.org/wiki/X86) instruction set.
+
+--
+This works fine when building images that will run on common desktop/laptop machines. However, many mobile devices and embedded computing devices such as the Raspberry Pi, use [ARM processors](https://en.wikipedia.org/wiki/ARM_architecture_family), whose instruction sets are not compatible with that of `x86` processors.
+
+--
+When building Docker images that must be able to run on multiple processor types, Docker's [buildx](https://docs.docker.com/engine/reference/commandline/buildx_build/) tool allows building images for multiple processor types in a single command.
 
 --
 
