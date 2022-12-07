@@ -940,7 +940,7 @@ To build a Docker image and share it with Docker Hub,
 
 - Tag your image with a version number: `docker tag <username>/<repository_name> <username>/<repository_name>:<version>`, where `<version>` is replaced with the version, e.g. `v1`.
 
---
+---
 
 template: docker-build
 
