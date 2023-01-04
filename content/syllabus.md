@@ -13,6 +13,10 @@ Department of Computer Science
 
 Agile software development has come to describe a specific approach and toolset that allow for the requirements of a software project to change as a project progresses without disrupting schedules, budgets, and responsibilities. The field of DevOps, a portmanteau of development and operations, has introduced further processes and infrastructure to automate many of the tasks required in such development. Together, an Agile methodology and DevOps automation have increased the speed, robustness, and scalability with which software is developed today and have reduced the uncertainty of outcomes inherent in complex software development. Upon completion of this course, students will understand the core methodologies, technologies, and tools used in the software industry today.
 
+## Prerequisites
+
+Computer Systems Organization (CSCI-UA.0201) with a grade of C or better
+
 ## Learning objectives
 
 Upon completing this course, students will be familiar with some of the most important software development tools and practices, including:
